@@ -1,0 +1,20 @@
+[
+  {
+    "sourceUrl": "https://github.com/gatling/gatling-recorder-bc-shaded/",
+    "licenseUrl": "https://raw.githubusercontent.com/bcgit/bc-java/main/LICENSE.md"
+  },
+  {
+    "sourceUrl": "https://github.com/lightbend/config/",
+    "licenseUrl": "https://raw.githubusercontent.com/lightbend/config/main/LICENSE-2.0.txt"
+  },
+  {
+    "sourceUrl": "https://saxonica.plan.io/projects/saxonmirrorhe/repository",
+    "tagUrl": "https://saxonica.plan.io/projects/saxonmirrorhe/repository",
+    "licenseUrl": "https://saxonica.plan.io/projects/saxonmirrorhe/repository/he/revisions/he-saxon10_6/raw/src/docs/notices/LICENSE.txt"
+  },
+  {
+    "sourceUrl": "https://code.google.com/p/jsr-305/",
+    "tagUrl": "https://code.google.com/p/jsr-305/",
+    "licenseUrl": "https://www.apache.org/licenses/LICENSE-2.0.txt"
+  }
+]

@@ -1,0 +1,15 @@
+[
+  {
+    "reference": "https://www.bouncycastle.org/about/license/",
+    "isDeprecatedLicenseId": false,
+    "detailsUrl": "https://www.bouncycastle.org/about/license/",
+    "referenceNumber": 999,
+    "name": "Bouncy Castle Licence",
+    "licenseId": "BouncyCastle",
+    "isSpdxListed": false,
+    "isOsiApproved": true,
+    "isFsfLibre": true,
+    "isCncfApproved": true,
+    "licenseReference": "MIT"
+  }
+]

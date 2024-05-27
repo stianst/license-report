@@ -1,0 +1,18 @@
+[
+  {
+    "licenseId": "GPL-2.0-only",
+    "urlMappings": [
+      "https://projects.eclipse.org/license/secondary-gpl-2.0-cp"
+    ]
+  },
+  {
+    "licenseId": "Apache-2.0",
+    "dependencyMappings": [
+      "io.javaoperatorsdk:operator-framework-core",
+      "io.javaoperatorsdk:micrometer-support"
+    ],
+    "urlMappings": [
+      "https://www.apache.org/licenses/LICENSE-2.0.html"
+    ]
+  }
+]

@@ -1,0 +1,73 @@
+<html>
+<body>
+<style>
+    body { font-size: 1em; }
+    table td { font-family: monospace; }
+    table, th, td { border: 1px solid black; border-collapse: collapse; }
+    th, td { vertical-align: top; padding: 5px; }
+    div.dependencies { max-height: 200px; overflow: auto; }
+    div.licenseText { border: 1px solid black; max-height: 200px; max-width: 1024px; overflow: auto; padding: 0 10px; text-wrap: wrap; }
+    tr.bad td { background-color: #F5B7B1; }
+    pre.licenseText { border: 1px solid black; max-height: 200px; max-width: 1024px; overflow: auto; padding: 10px; text-wrap: wrap; }
+    h3.mono { font-family: monospace; }
+</style>
+
+<h1>Third-party notice</h1>
+
+<p>
+    Keycloak source code and derived binaries are licenses under Apache License 2.0. In addition Keycloak
+    binary distributions contain a number of the open source libraries listed in this file.
+</p>
+
+<p>
+    This list is automatically generated and contains best effort information. If you identify any invalid information
+    please report via <a href="https://github.com/keycloak/keycloak/issues">https://github.com/keycloak/keycloak/issues</a>.
+</p>
+
+<h2>Third-party licenses</h2>
+<table>
+<tr>
+    <th>Name</th>
+    <th>Identifier</th>
+    <th>Dependencies</th>
+</tr>
+{#each license in report.licenses}
+<tr>
+    <td><a href="{license.spdxLicense.reference}">{license.spdxLicense.name}</a></td>
+    <td>{license.spdxLicense.licenseId}</td>
+    <td>
+    <div class="dependencies">
+    {#each dependency in license.dependencies}
+        <a href="#{dependency.reference}">{dependency.group}/{dependency.name} {dependency.version}</a><br/>
+    {/each}
+    </div>
+    </td>
+</tr>
+{/each}
+</table>
+
+<h2>Third-party dependencies</h2>
+{#each dependency in report.dependencies}
+    <h3 class="mono"><a name="{dependency.reference}">{dependency.group}/{dependency.name} {dependency.version}</a></h3>
+    <p>{dependency.description}</p>
+    <p>
+        Website: <a href="{dependency.webUrl}">{dependency.webUrl}</a><br/>
+        Source: <a href="{dependency.tagSourceUrl}">{dependency.tagSourceUrl}</a>
+    </p>
+    <p>
+        License: {dependency.license.name}<br/>
+        {#if dependency.license.licenseContentUrl != null}
+            License text: <a href="{dependency.license.licenseContentUrl}">{dependency.license.licenseContentUrl}</a>
+            {#if dependency.license.licenseContent != null}
+                {#if dependency.license.licenseContentPlainText}
+                    <pre class="licenseText">{dependency.license.licenseContent}</pre>
+                {#else}
+                    <div class="licenseText">{dependency.license.licenseContent}</div>
+                {/if}
+            {/if}
+        {/if}
+    </p>
+{/each}
+
+</body>
+</html>

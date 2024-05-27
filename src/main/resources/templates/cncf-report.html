@@ -1,0 +1,89 @@
+<html>
+<body>
+<style>
+    body { font-family: monospace; font-size: 10px; }
+    table, th, td { border: 1px solid black; border-collapse: collapse; }
+    th, td { vertical-align: top; padding: 5px; }
+    div { max-height: 200px; overflow: auto; }
+    tr.bad td { background-color: #F5B7B1; }
+    pre { border: 1px solid black; max-height: 300px; max-width: 1024px; overflow: auto; padding: 5px; text-wrap: wrap;
+</style>
+
+<h1>Non-approved dependencies</h1>
+
+<table>
+    <tr>
+        <th>Dependency</th>
+        <th>Description</th>
+        <th>License(s)</th>
+        <th>Website</th>
+        <th>Source repository</th>
+    </tr>
+{#each dependency in report.dependencies}
+{#if !dependency.approvedByCncf}
+    <tr>
+        <td>{dependency.reference}</td>
+        <td>{dependency.description}</td>
+        <td>
+            {#each license in dependency.allDeclaredLicenses}
+            <p><a href="{license.reference}">{license.licenseId}</a></p>
+            {/each}
+        </td>
+        <td><a href="{dependency.webUrl}">{dependency.webUrl}</a></td>
+        <td><a href="{dependency.sourceUrl}">{dependency.sourceUrl}</a></td>
+    </tr>
+{/if}
+{/each}
+</table>
+
+
+<h1>Licenses</h1>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Identifier</th>
+        <th>SPDX Listed?</th>
+        <th>FSF Free/Libre?</th>
+        <th>OSI Approved?</th>
+        <th>CNCF Approved?</th>
+        <th>Dependencies</th>
+    </tr>
+
+    {#each license in report.licenses}
+        {#if license.spdxLicense.fsfLibre || license.spdxLicense.osiApproved || license.spdxLicense.cncfApproved}
+            <tr>
+        {#else}
+            <tr class="bad">
+        {/if}
+
+        {#if license.spdxLicense.licenseReference != null}
+            <td>
+                {#let referencedLicense=report.spdxLicenses.findByLicenseId(license.spdxLicense.licenseReference)}
+                <a href="{license.spdxLicense.reference}">{license.spdxLicense.name}</a>
+                (<a href="{referencedLicense.reference}">{referencedLicense.name}</a>)
+            </td>
+            <td>{license.spdxLicense.licenseId} ({license.spdxLicense.licenseReference})</td>
+        {/if}
+
+        {#if license.spdxLicense.licenseReference == null}
+            <td><a href="{license.spdxLicense.reference}">{license.spdxLicense.name}</a></td>
+            <td>{license.spdxLicense.licenseId}</td>
+        {/if}
+
+        <td>{license.spdxLicense.spdxListed ? "Y" : ""}</td>
+        <td>{license.spdxLicense.fsfLibre ? "Y" : ""}</td>
+        <td>{license.spdxLicense.osiApproved ? "Y" : ""}</td>
+        <td>{license.spdxLicense.cncfApproved ? "Y" : ""}</td>
+        <td>
+            <div>
+                {#each dependency in license.dependencies}
+                    {dependency.reference}<br/>
+                {/each}
+            </div>
+        </td>
+        </tr>
+    {/each}
+</table>
+
+</body>
+</html>

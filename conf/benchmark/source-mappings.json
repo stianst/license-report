@@ -1,0 +1,18 @@
+[
+  {
+    "dependency": "io.gatling:gatling-shared-util_2.13",
+    "sourceUrl": "https://github.com/gatling/gatling"
+  },
+  {
+    "dependency": "io.gatling:gatling-shared-model_2.13",
+    "sourceUrl": "https://github.com/gatling/gatling"
+  },
+  {
+    "dependency": "org.codehaus.janino:commons-compiler",
+    "sourceUrl": "https://github.com/janino-compiler/janino"
+  },
+  {
+    "dependency": "net.sf.saxon:Saxon-HE",
+    "sourceUrl": "https://saxonica.plan.io/projects/saxonmirrorhe/repository"
+  }
+]

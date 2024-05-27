@@ -1,0 +1,20 @@
+[
+  {
+    "licenseId": "Apache-2.0",
+    "urlMappings": [
+      "http://www.apache.org/licenses/LICENSE-2.0.txt"
+    ]
+  },
+  {
+    "licenseId": "LGPL-2.1-only",
+    "urlMappings": [
+      "http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html"
+    ]
+  },
+  {
+    "licenseId": "BouncyCastle",
+    "nameMappings": [
+      "Bouncy Castle Licence"
+    ]
+  }
+]

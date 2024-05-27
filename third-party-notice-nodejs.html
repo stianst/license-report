@@ -1,0 +1,941 @@
+<html>
+<body>
+<style>
+    body { font-size: 1em; }
+    table td { font-family: monospace; }
+    table, th, td { border: 1px solid black; border-collapse: collapse; }
+    th, td { vertical-align: top; padding: 5px; }
+    div.dependencies { max-height: 200px; overflow: auto; }
+    div.licenseText { border: 1px solid black; max-height: 200px; max-width: 1024px; overflow: auto; padding: 0 10px; text-wrap: wrap; }
+    tr.bad td { background-color: #F5B7B1; }
+    pre.licenseText { border: 1px solid black; max-height: 200px; max-width: 1024px; overflow: auto; padding: 10px; text-wrap: wrap; }
+    h3.mono { font-family: monospace; }
+</style>
+
+<h1>Third-party notice</h1>
+
+<p>
+    Keycloak source code and derived binaries are licenses under Apache License 2.0. In addition Keycloak
+    binary distributions contain a number of the open source libraries listed in this file.
+</p>
+
+<p>
+    This list is automatically generated and contains best effort information. If you identify any invalid information
+    please report via <a href="https://github.com/keycloak/keycloak/issues">https://github.com/keycloak/keycloak/issues</a>.
+</p>
+
+<h2>Third-party licenses</h2>
+<table>
+<tr>
+    <th>Name</th>
+    <th>Identifier</th>
+    <th>Dependencies</th>
+</tr>
+<tr>
+    <td><a href="https://spdx.org/licenses/Apache-2.0.html">Apache License 2.0</a></td>
+    <td>Apache-2.0</td>
+    <td>
+    <div class="dependencies">
+        <a href="#:chromedriver:105.0.1">/chromedriver 105.0.1</a><br/>
+        <a href="#:jwk-to-pem:2.0.5">/jwk-to-pem 2.0.5</a><br/>
+    </div>
+    </td>
+</tr>
+<tr>
+    <td><a href="https://spdx.org/licenses/BSD-2-Clause.html">BSD 2-Clause &quot;Simplified&quot; License</a></td>
+    <td>BSD-2-Clause</td>
+    <td>
+    <div class="dependencies">
+        <a href="#:extract-zip:2.0.1">/extract-zip 2.0.1</a><br/>
+    </div>
+    </td>
+</tr>
+<tr>
+    <td><a href="https://spdx.org/licenses/ISC.html">ISC License</a></td>
+    <td>ISC</td>
+    <td>
+    <div class="dependencies">
+        <a href="#:fastq:1.13.0">/fastq 1.13.0</a><br/>
+        <a href="#:fs.realpath:1.0.0">/fs.realpath 1.0.0</a><br/>
+        <a href="#:glob-parent:5.1.2">/glob-parent 5.1.2</a><br/>
+        <a href="#:glob:7.2.3">/glob 7.2.3</a><br/>
+        <a href="#:graceful-fs:4.2.8">/graceful-fs 4.2.8</a><br/>
+        <a href="#:inflight:1.0.6">/inflight 1.0.6</a><br/>
+        <a href="#:inherits:2.0.4">/inherits 2.0.4</a><br/>
+        <a href="#:minimalistic-assert:1.0.1">/minimalistic-assert 1.0.1</a><br/>
+        <a href="#:minimatch:3.1.2">/minimatch 3.1.2</a><br/>
+        <a href="#:once:1.4.0">/once 1.4.0</a><br/>
+        <a href="#:rimraf:3.0.2">/rimraf 3.0.2</a><br/>
+        <a href="#:wrappy:1.0.2">/wrappy 1.0.2</a><br/>
+    </div>
+    </td>
+</tr>
+<tr>
+    <td><a href="https://spdx.org/licenses/MIT.html">MIT License</a></td>
+    <td>MIT</td>
+    <td>
+    <div class="dependencies">
+        <a href="#:agent-base:6.0.2">/agent-base 6.0.2</a><br/>
+        <a href="#:aggregate-error:3.1.0">/aggregate-error 3.1.0</a><br/>
+        <a href="#:array-union:2.1.0">/array-union 2.1.0</a><br/>
+        <a href="#:asn1.js:5.4.1">/asn1.js 5.4.1</a><br/>
+        <a href="#:asynckit:0.4.0">/asynckit 0.4.0</a><br/>
+        <a href="#:axios:0.27.2">/axios 0.27.2</a><br/>
+        <a href="#:balanced-match:1.0.2">/balanced-match 1.0.2</a><br/>
+        <a href="#:bn.js:4.12.0">/bn.js 4.12.0</a><br/>
+        <a href="#:brace-expansion:1.1.11">/brace-expansion 1.1.11</a><br/>
+        <a href="#:braces:3.0.2">/braces 3.0.2</a><br/>
+        <a href="#:brorand:1.1.0">/brorand 1.1.0</a><br/>
+        <a href="#:buffer-crc32:0.2.13">/buffer-crc32 0.2.13</a><br/>
+        <a href="#:clean-stack:2.2.0">/clean-stack 2.2.0</a><br/>
+        <a href="#:combined-stream:1.0.8">/combined-stream 1.0.8</a><br/>
+        <a href="#:concat-map:0.0.1">/concat-map 0.0.1</a><br/>
+        <a href="#:debug:4.3.1">/debug 4.3.1</a><br/>
+        <a href="#:debug:4.3.3">/debug 4.3.3</a><br/>
+        <a href="#:debug:4.3.4">/debug 4.3.4</a><br/>
+        <a href="#:deep-is:0.1.4">/deep-is 0.1.4</a><br/>
+        <a href="#:del:6.1.1">/del 6.1.1</a><br/>
+        <a href="#:delayed-stream:1.0.0">/delayed-stream 1.0.0</a><br/>
+        <a href="#:dir-glob:3.0.1">/dir-glob 3.0.1</a><br/>
+        <a href="#:elliptic:6.5.4">/elliptic 6.5.4</a><br/>
+        <a href="#:end-of-stream:1.4.4">/end-of-stream 1.4.4</a><br/>
+        <a href="#:fast-glob:3.2.12">/fast-glob 3.2.12</a><br/>
+        <a href="#:fd-slicer:1.1.0">/fd-slicer 1.1.0</a><br/>
+        <a href="#:fill-range:7.0.1">/fill-range 7.0.1</a><br/>
+        <a href="#:follow-redirects:1.14.9">/follow-redirects 1.14.9</a><br/>
+        <a href="#:form-data:4.0.0">/form-data 4.0.0</a><br/>
+        <a href="#:get-stream:5.2.0">/get-stream 5.2.0</a><br/>
+        <a href="#:globby:11.1.0">/globby 11.1.0</a><br/>
+        <a href="#:hash.js:1.1.7">/hash.js 1.1.7</a><br/>
+        <a href="#:hmac-drbg:1.0.1">/hmac-drbg 1.0.1</a><br/>
+        <a href="#:https-proxy-agent:5.0.1">/https-proxy-agent 5.0.1</a><br/>
+        <a href="#:ignore:5.2.0">/ignore 5.2.0</a><br/>
+        <a href="#:indent-string:4.0.0">/indent-string 4.0.0</a><br/>
+        <a href="#:ip-regex:4.3.0">/ip-regex 4.3.0</a><br/>
+        <a href="#:is-extglob:2.1.1">/is-extglob 2.1.1</a><br/>
+        <a href="#:is-glob:4.0.3">/is-glob 4.0.3</a><br/>
+        <a href="#:is-number:7.0.0">/is-number 7.0.0</a><br/>
+        <a href="#:is-path-cwd:2.2.0">/is-path-cwd 2.2.0</a><br/>
+        <a href="#:is-path-inside:3.0.3">/is-path-inside 3.0.3</a><br/>
+        <a href="#:is-url:1.2.4">/is-url 1.2.4</a><br/>
+        <a href="#:is2:2.0.7">/is2 2.0.7</a><br/>
+        <a href="#:merge2:1.4.1">/merge2 1.4.1</a><br/>
+        <a href="#:micromatch:4.0.5">/micromatch 4.0.5</a><br/>
+        <a href="#:mime-db:1.51.0">/mime-db 1.51.0</a><br/>
+        <a href="#:mime-types:2.1.34">/mime-types 2.1.34</a><br/>
+        <a href="#:minimalistic-crypto-utils:1.0.1">/minimalistic-crypto-utils 1.0.1</a><br/>
+        <a href="#:ms:2.1.2">/ms 2.1.2</a><br/>
+        <a href="#:p-map:4.0.0">/p-map 4.0.0</a><br/>
+        <a href="#:path-is-absolute:1.0.1">/path-is-absolute 1.0.1</a><br/>
+        <a href="#:path-type:4.0.0">/path-type 4.0.0</a><br/>
+        <a href="#:pend:1.2.0">/pend 1.2.0</a><br/>
+        <a href="#:picomatch:2.3.1">/picomatch 2.3.1</a><br/>
+        <a href="#:proxy-from-env:1.1.0">/proxy-from-env 1.1.0</a><br/>
+        <a href="#:pump:3.0.0">/pump 3.0.0</a><br/>
+        <a href="#:queue-microtask:1.2.3">/queue-microtask 1.2.3</a><br/>
+        <a href="#:reusify:1.0.4">/reusify 1.0.4</a><br/>
+        <a href="#:run-parallel:1.2.0">/run-parallel 1.2.0</a><br/>
+        <a href="#:safe-buffer:5.2.1">/safe-buffer 5.2.1</a><br/>
+        <a href="#:safer-buffer:2.1.2">/safer-buffer 2.1.2</a><br/>
+        <a href="#:slash:3.0.0">/slash 3.0.0</a><br/>
+        <a href="#:tcp-port-used:1.0.2">/tcp-port-used 1.0.2</a><br/>
+        <a href="#:to-regex-range:5.0.1">/to-regex-range 5.0.1</a><br/>
+        <a href="#:yauzl:2.10.0">/yauzl 2.10.0</a><br/>
+        <a href="#@nodelib:fs.scandir:2.1.5">@nodelib/fs.scandir 2.1.5</a><br/>
+        <a href="#@nodelib:fs.stat:2.0.5">@nodelib/fs.stat 2.0.5</a><br/>
+        <a href="#@nodelib:fs.walk:1.2.8">@nodelib/fs.walk 1.2.8</a><br/>
+        <a href="#@testim:chrome-version:1.1.3">@testim/chrome-version 1.1.3</a><br/>
+        <a href="#@types:node:17.0.2">@types/node 17.0.2</a><br/>
+        <a href="#@types:yauzl:2.9.2">@types/yauzl 2.9.2</a><br/>
+    </div>
+    </td>
+</tr>
+</table>
+
+<h2>Third-party dependencies</h2>
+    <h3 class="mono"><a name=":agent-base:6.0.2">/agent-base 6.0.2</a></h3>
+    <p>Turn a function into an `http.Agent` instance</p>
+    <p>
+        Website: <a href=""></a><br/>
+        Source: <a href="https://github.com/TooTallNate/proxy-agents/">https://github.com/TooTallNate/proxy-agents/</a>
+    </p>
+    <p>
+        License: MIT License<br/>
+    </p>
+    <h3 class="mono"><a name=":aggregate-error:3.1.0">/aggregate-error 3.1.0</a></h3>
+    <p>Create an error from multiple errors</p>
+    <p>
+        Website: <a href=""></a><br/>
+        Source: <a href="https://github.com/sindresorhus/aggregate-error/">https://github.com/sindresorhus/aggregate-error/</a>
+    </p>
+    <p>
+        License: MIT License<br/>
+    </p>
+    <h3 class="mono"><a name=":array-union:2.1.0">/array-union 2.1.0</a></h3>
+    <p>Create an array of unique values, in order, from the input arrays</p>
+    <p>
+        Website: <a href=""></a><br/>
+        Source: <a href="https://github.com/sindresorhus/array-union/">https://github.com/sindresorhus/array-union/</a>
+    </p>
+    <p>
+        License: MIT License<br/>
+    </p>
+    <h3 class="mono"><a name=":asn1.js:5.4.1">/asn1.js 5.4.1</a></h3>
+    <p>ASN.1 encoder and decoder</p>
+    <p>
+        Website: <a href=""></a><br/>
+        Source: <a href="https://github.com/indutny/asn1.js/">https://github.com/indutny/asn1.js/</a>
+    </p>
+    <p>
+        License: MIT License<br/>
+    </p>
+    <h3 class="mono"><a name=":asynckit:0.4.0">/asynckit 0.4.0</a></h3>
+    <p>Minimal async jobs utility library, with streams support</p>
+    <p>
+        Website: <a href=""></a><br/>
+        Source: <a href="https://github.com/alexindigo/asynckit/">https://github.com/alexindigo/asynckit/</a>
+    </p>
+    <p>
+        License: MIT License<br/>
+    </p>
+    <h3 class="mono"><a name=":axios:0.27.2">/axios 0.27.2</a></h3>
+    <p>Promise based HTTP client for the browser and node.js</p>
+    <p>
+        Website: <a href="https://axios-http.com">https://axios-http.com</a><br/>
+        Source: <a href="https://github.com/axios/axios/">https://github.com/axios/axios/</a>
+    </p>
+    <p>
+        License: MIT License<br/>
+    </p>
+    <h3 class="mono"><a name=":balanced-match:1.0.2">/balanced-match 1.0.2</a></h3>
+    <p>Match balanced character pairs, like &quot;{&quot; and &quot;}&quot;</p>
+    <p>
+        Website: <a href=""></a><br/>
+        Source: <a href="https://github.com/juliangruber/balanced-match/">https://github.com/juliangruber/balanced-match/</a>
+    </p>
+    <p>
+        License: MIT License<br/>
+    </p>
+    <h3 class="mono"><a name=":bn.js:4.12.0">/bn.js 4.12.0</a></h3>
+    <p>Big number implementation in pure javascript</p>
+    <p>
+        Website: <a href=""></a><br/>
+        Source: <a href="https://github.com/indutny/bn.js/">https://github.com/indutny/bn.js/</a>
+    </p>
+    <p>
+        License: MIT License<br/>
+    </p>
+    <h3 class="mono"><a name=":brace-expansion:1.1.11">/brace-expansion 1.1.11</a></h3>
+    <p>Brace expansion as known from sh/bash</p>
+    <p>
+        Website: <a href=""></a><br/>
+        Source: <a href="https://github.com/juliangruber/brace-expansion/">https://github.com/juliangruber/brace-expansion/</a>
+    </p>
+    <p>
+        License: MIT License<br/>
+    </p>
+    <h3 class="mono"><a name=":braces:3.0.2">/braces 3.0.2</a></h3>
+    <p>Bash-like brace expansion, implemented in JavaScript. Safer than other brace expansion libs, with complete support for the Bash 4.3 braces specification, without sacrificing speed.</p>
+    <p>
+        Website: <a href=""></a><br/>
+        Source: <a href="https://github.com/micromatch/braces/">https://github.com/micromatch/braces/</a>
+    </p>
+    <p>
+        License: MIT License<br/>
+    </p>
+    <h3 class="mono"><a name=":brorand:1.1.0">/brorand 1.1.0</a></h3>
+    <p>Random number generator for browsers and node.js</p>
+    <p>
+        Website: <a href=""></a><br/>
+        Source: <a href="https://github.com/indutny/brorand/">https://github.com/indutny/brorand/</a>
+    </p>
+    <p>
+        License: MIT License<br/>
+    </p>
+    <h3 class="mono"><a name=":buffer-crc32:0.2.13">/buffer-crc32 0.2.13</a></h3>
+    <p>A pure javascript CRC32 algorithm that plays nice with binary data</p>
+    <p>
+        Website: <a href=""></a><br/>
+        Source: <a href="https://github.com/brianloveswords/buffer-crc32/">https://github.com/brianloveswords/buffer-crc32/</a>
+    </p>
+    <p>
+        License: MIT License<br/>
+    </p>
+    <h3 class="mono"><a name=":chromedriver:105.0.1">/chromedriver 105.0.1</a></h3>
+    <p>ChromeDriver for Selenium</p>
+    <p>
+        Website: <a href=""></a><br/>
+        Source: <a href="https://github.com/giggio/node-chromedriver/">https://github.com/giggio/node-chromedriver/</a>
+    </p>
+    <p>
+        License: Apache License 2.0<br/>
+    </p>
+    <h3 class="mono"><a name=":clean-stack:2.2.0">/clean-stack 2.2.0</a></h3>
+    <p>Clean up error stack traces</p>
+    <p>
+        Website: <a href=""></a><br/>
+        Source: <a href="https://github.com/sindresorhus/clean-stack/">https://github.com/sindresorhus/clean-stack/</a>
+    </p>
+    <p>
+        License: MIT License<br/>
+    </p>
+    <h3 class="mono"><a name=":combined-stream:1.0.8">/combined-stream 1.0.8</a></h3>
+    <p>A stream that emits multiple other streams one after another.</p>
+    <p>
+        Website: <a href=""></a><br/>
+        Source: <a href="https://github.com/felixge/node-combined-stream/">https://github.com/felixge/node-combined-stream/</a>
+    </p>
+    <p>
+        License: MIT License<br/>
+    </p>
+    <h3 class="mono"><a name=":concat-map:0.0.1">/concat-map 0.0.1</a></h3>
+    <p>concatenative mapdashery</p>
+    <p>
+        Website: <a href=""></a><br/>
+        Source: <a href="https://github.com/ljharb/concat-map/">https://github.com/ljharb/concat-map/</a>
+    </p>
+    <p>
+        License: MIT License<br/>
+    </p>
+    <h3 class="mono"><a name=":debug:4.3.1">/debug 4.3.1</a></h3>
+    <p>small debugging utility</p>
+    <p>
+        Website: <a href=""></a><br/>
+        Source: <a href="https://github.com/debug-js/debug/">https://github.com/debug-js/debug/</a>
+    </p>
+    <p>
+        License: MIT License<br/>
+    </p>
+    <h3 class="mono"><a name=":debug:4.3.3">/debug 4.3.3</a></h3>
+    <p>Lightweight debugging utility for Node.js and the browser</p>
+    <p>
+        Website: <a href=""></a><br/>
+        Source: <a href="https://github.com/debug-js/debug/">https://github.com/debug-js/debug/</a>
+    </p>
+    <p>
+        License: MIT License<br/>
+    </p>
+    <h3 class="mono"><a name=":debug:4.3.4">/debug 4.3.4</a></h3>
+    <p>Lightweight debugging utility for Node.js and the browser</p>
+    <p>
+        Website: <a href=""></a><br/>
+        Source: <a href="https://github.com/debug-js/debug/">https://github.com/debug-js/debug/</a>
+    </p>
+    <p>
+        License: MIT License<br/>
+    </p>
+    <h3 class="mono"><a name=":deep-is:0.1.4">/deep-is 0.1.4</a></h3>
+    <p>node&#39;s assert.deepEqual algorithm except for NaN being equal to NaN</p>
+    <p>
+        Website: <a href=""></a><br/>
+        Source: <a href="https://github.com/thlorenz/deep-is/">https://github.com/thlorenz/deep-is/</a>
+    </p>
+    <p>
+        License: MIT License<br/>
+    </p>
+    <h3 class="mono"><a name=":del:6.1.1">/del 6.1.1</a></h3>
+    <p>Delete files and directories</p>
+    <p>
+        Website: <a href=""></a><br/>
+        Source: <a href="https://github.com/sindresorhus/del/">https://github.com/sindresorhus/del/</a>
+    </p>
+    <p>
+        License: MIT License<br/>
+    </p>
+    <h3 class="mono"><a name=":delayed-stream:1.0.0">/delayed-stream 1.0.0</a></h3>
+    <p>Buffers events from a stream until you are ready to handle them.</p>
+    <p>
+        Website: <a href=""></a><br/>
+        Source: <a href="https://github.com/felixge/node-delayed-stream/">https://github.com/felixge/node-delayed-stream/</a>
+    </p>
+    <p>
+        License: MIT License<br/>
+    </p>
+    <h3 class="mono"><a name=":dir-glob:3.0.1">/dir-glob 3.0.1</a></h3>
+    <p>Convert directories to glob compatible strings</p>
+    <p>
+        Website: <a href=""></a><br/>
+        Source: <a href="https://github.com/kevva/dir-glob/">https://github.com/kevva/dir-glob/</a>
+    </p>
+    <p>
+        License: MIT License<br/>
+    </p>
+    <h3 class="mono"><a name=":elliptic:6.5.4">/elliptic 6.5.4</a></h3>
+    <p>EC cryptography</p>
+    <p>
+        Website: <a href=""></a><br/>
+        Source: <a href="https://github.com/indutny/elliptic/">https://github.com/indutny/elliptic/</a>
+    </p>
+    <p>
+        License: MIT License<br/>
+    </p>
+    <h3 class="mono"><a name=":end-of-stream:1.4.4">/end-of-stream 1.4.4</a></h3>
+    <p>Call a callback when a readable/writable/duplex stream has completed or failed.</p>
+    <p>
+        Website: <a href=""></a><br/>
+        Source: <a href="https://github.com/mafintosh/end-of-stream/">https://github.com/mafintosh/end-of-stream/</a>
+    </p>
+    <p>
+        License: MIT License<br/>
+    </p>
+    <h3 class="mono"><a name=":extract-zip:2.0.1">/extract-zip 2.0.1</a></h3>
+    <p>unzip a zip file into a directory using 100% javascript</p>
+    <p>
+        Website: <a href=""></a><br/>
+        Source: <a href="https://github.com/maxogden/extract-zip/">https://github.com/maxogden/extract-zip/</a>
+    </p>
+    <p>
+        License: BSD 2-Clause &quot;Simplified&quot; License<br/>
+    </p>
+    <h3 class="mono"><a name=":fast-glob:3.2.12">/fast-glob 3.2.12</a></h3>
+    <p>It&#39;s a very fast and efficient glob library for Node.js</p>
+    <p>
+        Website: <a href=""></a><br/>
+        Source: <a href="https://github.com/mrmlnc/fast-glob/">https://github.com/mrmlnc/fast-glob/</a>
+    </p>
+    <p>
+        License: MIT License<br/>
+    </p>
+    <h3 class="mono"><a name=":fastq:1.13.0">/fastq 1.13.0</a></h3>
+    <p>Fast, in memory work queue</p>
+    <p>
+        Website: <a href=""></a><br/>
+        Source: <a href="https://github.com/mcollina/fastq/">https://github.com/mcollina/fastq/</a>
+    </p>
+    <p>
+        License: ISC License<br/>
+    </p>
+    <h3 class="mono"><a name=":fd-slicer:1.1.0">/fd-slicer 1.1.0</a></h3>
+    <p>safely create multiple ReadStream or WriteStream objects from the same file descriptor</p>
+    <p>
+        Website: <a href=""></a><br/>
+        Source: <a href="https://github.com/andrewrk/node-fd-slicer/">https://github.com/andrewrk/node-fd-slicer/</a>
+    </p>
+    <p>
+        License: MIT License<br/>
+    </p>
+    <h3 class="mono"><a name=":fill-range:7.0.1">/fill-range 7.0.1</a></h3>
+    <p>Fill in a range of numbers or letters, optionally passing an increment or `step` to use, or create a regex-compatible range with `options.toRegex`</p>
+    <p>
+        Website: <a href=""></a><br/>
+        Source: <a href="https://github.com/jonschlinkert/fill-range/">https://github.com/jonschlinkert/fill-range/</a>
+    </p>
+    <p>
+        License: MIT License<br/>
+    </p>
+    <h3 class="mono"><a name=":follow-redirects:1.14.9">/follow-redirects 1.14.9</a></h3>
+    <p>HTTP and HTTPS modules that follow redirects.</p>
+    <p>
+        Website: <a href=""></a><br/>
+        Source: <a href="https://github.com/follow-redirects/follow-redirects/">https://github.com/follow-redirects/follow-redirects/</a>
+    </p>
+    <p>
+        License: MIT License<br/>
+    </p>
+    <h3 class="mono"><a name=":form-data:4.0.0">/form-data 4.0.0</a></h3>
+    <p>A library to create readable &quot;multipart/form-data&quot; streams. Can be used to submit forms and file uploads to other web applications.</p>
+    <p>
+        Website: <a href=""></a><br/>
+        Source: <a href="https://github.com/form-data/form-data/">https://github.com/form-data/form-data/</a>
+    </p>
+    <p>
+        License: MIT License<br/>
+    </p>
+    <h3 class="mono"><a name=":fs.realpath:1.0.0">/fs.realpath 1.0.0</a></h3>
+    <p>Use node&#39;s fs.realpath, but fall back to the JS implementation if the native one fails</p>
+    <p>
+        Website: <a href=""></a><br/>
+        Source: <a href="https://github.com/isaacs/fs.realpath/">https://github.com/isaacs/fs.realpath/</a>
+    </p>
+    <p>
+        License: ISC License<br/>
+    </p>
+    <h3 class="mono"><a name=":get-stream:5.2.0">/get-stream 5.2.0</a></h3>
+    <p>Get a stream as a string, buffer, or array</p>
+    <p>
+        Website: <a href=""></a><br/>
+        Source: <a href="https://github.com/sindresorhus/get-stream/">https://github.com/sindresorhus/get-stream/</a>
+    </p>
+    <p>
+        License: MIT License<br/>
+    </p>
+    <h3 class="mono"><a name=":glob-parent:5.1.2">/glob-parent 5.1.2</a></h3>
+    <p>Extract the non-magic parent path from a glob string.</p>
+    <p>
+        Website: <a href=""></a><br/>
+        Source: <a href="https://github.com/gulpjs/glob-parent/">https://github.com/gulpjs/glob-parent/</a>
+    </p>
+    <p>
+        License: ISC License<br/>
+    </p>
+    <h3 class="mono"><a name=":glob:7.2.3">/glob 7.2.3</a></h3>
+    <p>a little globber</p>
+    <p>
+        Website: <a href=""></a><br/>
+        Source: <a href="https://github.com/isaacs/node-glob/">https://github.com/isaacs/node-glob/</a>
+    </p>
+    <p>
+        License: ISC License<br/>
+    </p>
+    <h3 class="mono"><a name=":globby:11.1.0">/globby 11.1.0</a></h3>
+    <p>User-friendly glob matching</p>
+    <p>
+        Website: <a href=""></a><br/>
+        Source: <a href="https://github.com/sindresorhus/globby/">https://github.com/sindresorhus/globby/</a>
+    </p>
+    <p>
+        License: MIT License<br/>
+    </p>
+    <h3 class="mono"><a name=":graceful-fs:4.2.8">/graceful-fs 4.2.8</a></h3>
+    <p>A drop-in replacement for fs, making various improvements.</p>
+    <p>
+        Website: <a href=""></a><br/>
+        Source: <a href="https://github.com/isaacs/node-graceful-fs/">https://github.com/isaacs/node-graceful-fs/</a>
+    </p>
+    <p>
+        License: ISC License<br/>
+    </p>
+    <h3 class="mono"><a name=":hash.js:1.1.7">/hash.js 1.1.7</a></h3>
+    <p>Various hash functions that could be run by both browser and node</p>
+    <p>
+        Website: <a href=""></a><br/>
+        Source: <a href="https://github.com/indutny/hash.js/">https://github.com/indutny/hash.js/</a>
+    </p>
+    <p>
+        License: MIT License<br/>
+    </p>
+    <h3 class="mono"><a name=":hmac-drbg:1.0.1">/hmac-drbg 1.0.1</a></h3>
+    <p>Deterministic random bit generator (hmac)</p>
+    <p>
+        Website: <a href=""></a><br/>
+        Source: <a href="https://github.com/indutny/hmac-drbg/">https://github.com/indutny/hmac-drbg/</a>
+    </p>
+    <p>
+        License: MIT License<br/>
+    </p>
+    <h3 class="mono"><a name=":https-proxy-agent:5.0.1">/https-proxy-agent 5.0.1</a></h3>
+    <p>An HTTP(s) proxy `http.Agent` implementation for HTTPS</p>
+    <p>
+        Website: <a href=""></a><br/>
+        Source: <a href="https://github.com/TooTallNate/proxy-agents/">https://github.com/TooTallNate/proxy-agents/</a>
+    </p>
+    <p>
+        License: MIT License<br/>
+    </p>
+    <h3 class="mono"><a name=":ignore:5.2.0">/ignore 5.2.0</a></h3>
+    <p>Ignore is a manager and filter for .gitignore rules, the one used by eslint, gitbook and many others.</p>
+    <p>
+        Website: <a href=""></a><br/>
+        Source: <a href="https://github.com/kaelzhang/node-ignore/">https://github.com/kaelzhang/node-ignore/</a>
+    </p>
+    <p>
+        License: MIT License<br/>
+    </p>
+    <h3 class="mono"><a name=":indent-string:4.0.0">/indent-string 4.0.0</a></h3>
+    <p>Indent each line in a string</p>
+    <p>
+        Website: <a href=""></a><br/>
+        Source: <a href="https://github.com/sindresorhus/indent-string/">https://github.com/sindresorhus/indent-string/</a>
+    </p>
+    <p>
+        License: MIT License<br/>
+    </p>
+    <h3 class="mono"><a name=":inflight:1.0.6">/inflight 1.0.6</a></h3>
+    <p>Add callbacks to requests in flight to avoid async duplication</p>
+    <p>
+        Website: <a href=""></a><br/>
+        Source: <a href="https://github.com/isaacs/inflight/">https://github.com/isaacs/inflight/</a>
+    </p>
+    <p>
+        License: ISC License<br/>
+    </p>
+    <h3 class="mono"><a name=":inherits:2.0.4">/inherits 2.0.4</a></h3>
+    <p>Browser-friendly inheritance fully compatible with standard node.js inherits()</p>
+    <p>
+        Website: <a href=""></a><br/>
+        Source: <a href="https://github.com/isaacs/inherits/">https://github.com/isaacs/inherits/</a>
+    </p>
+    <p>
+        License: ISC License<br/>
+    </p>
+    <h3 class="mono"><a name=":ip-regex:4.3.0">/ip-regex 4.3.0</a></h3>
+    <p>Regular expression for matching IP addresses (IPv4 &amp; IPv6)</p>
+    <p>
+        Website: <a href=""></a><br/>
+        Source: <a href="https://github.com/sindresorhus/ip-regex/">https://github.com/sindresorhus/ip-regex/</a>
+    </p>
+    <p>
+        License: MIT License<br/>
+    </p>
+    <h3 class="mono"><a name=":is-extglob:2.1.1">/is-extglob 2.1.1</a></h3>
+    <p>Returns true if a string has an extglob.</p>
+    <p>
+        Website: <a href=""></a><br/>
+        Source: <a href="https://github.com/jonschlinkert/is-extglob/">https://github.com/jonschlinkert/is-extglob/</a>
+    </p>
+    <p>
+        License: MIT License<br/>
+    </p>
+    <h3 class="mono"><a name=":is-glob:4.0.3">/is-glob 4.0.3</a></h3>
+    <p>Returns `true` if the given string looks like a glob pattern or an extglob pattern. This makes it easy to create code that only uses external modules like node-glob when necessary, resulting in much faster code execution and initialization time, and a bet</p>
+    <p>
+        Website: <a href=""></a><br/>
+        Source: <a href="https://github.com/micromatch/is-glob/">https://github.com/micromatch/is-glob/</a>
+    </p>
+    <p>
+        License: MIT License<br/>
+    </p>
+    <h3 class="mono"><a name=":is-number:7.0.0">/is-number 7.0.0</a></h3>
+    <p>Returns true if a number or string value is a finite number. Useful for regex matches, parsing, user input, etc.</p>
+    <p>
+        Website: <a href=""></a><br/>
+        Source: <a href="https://github.com/jonschlinkert/is-number/">https://github.com/jonschlinkert/is-number/</a>
+    </p>
+    <p>
+        License: MIT License<br/>
+    </p>
+    <h3 class="mono"><a name=":is-path-cwd:2.2.0">/is-path-cwd 2.2.0</a></h3>
+    <p>Check if a path is the current working directory</p>
+    <p>
+        Website: <a href=""></a><br/>
+        Source: <a href="https://github.com/sindresorhus/is-path-cwd/">https://github.com/sindresorhus/is-path-cwd/</a>
+    </p>
+    <p>
+        License: MIT License<br/>
+    </p>
+    <h3 class="mono"><a name=":is-path-inside:3.0.3">/is-path-inside 3.0.3</a></h3>
+    <p>Check if a path is inside another path</p>
+    <p>
+        Website: <a href=""></a><br/>
+        Source: <a href="https://github.com/sindresorhus/is-path-inside/">https://github.com/sindresorhus/is-path-inside/</a>
+    </p>
+    <p>
+        License: MIT License<br/>
+    </p>
+    <h3 class="mono"><a name=":is-url:1.2.4">/is-url 1.2.4</a></h3>
+    <p>Check whether a string is a URL.</p>
+    <p>
+        Website: <a href=""></a><br/>
+        Source: <a href="https://github.com/segmentio/is-url/">https://github.com/segmentio/is-url/</a>
+    </p>
+    <p>
+        License: MIT License<br/>
+    </p>
+    <h3 class="mono"><a name=":is2:2.0.7">/is2 2.0.7</a></h3>
+    <p>A type checking library where each exported function returns either true or false and does not throw. Also added tests.</p>
+    <p>
+        Website: <a href=""></a><br/>
+        Source: <a href="https://github.com/stdarg/is2/">https://github.com/stdarg/is2/</a>
+    </p>
+    <p>
+        License: MIT License<br/>
+    </p>
+    <h3 class="mono"><a name=":jwk-to-pem:2.0.5">/jwk-to-pem 2.0.5</a></h3>
+    <p>Convert a JSON Web Key to a PEM</p>
+    <p>
+        Website: <a href=""></a><br/>
+        Source: <a href="https://github.com/Brightspace/node-jwk-to-pem/">https://github.com/Brightspace/node-jwk-to-pem/</a>
+    </p>
+    <p>
+        License: Apache License 2.0<br/>
+    </p>
+    <h3 class="mono"><a name=":merge2:1.4.1">/merge2 1.4.1</a></h3>
+    <p>Merge multiple streams into one stream in sequence or parallel.</p>
+    <p>
+        Website: <a href=""></a><br/>
+        Source: <a href="https://github.com/teambition/merge2/">https://github.com/teambition/merge2/</a>
+    </p>
+    <p>
+        License: MIT License<br/>
+    </p>
+    <h3 class="mono"><a name=":micromatch:4.0.5">/micromatch 4.0.5</a></h3>
+    <p>Glob matching for javascript/node.js. A replacement and faster alternative to minimatch and multimatch.</p>
+    <p>
+        Website: <a href=""></a><br/>
+        Source: <a href="https://github.com/micromatch/micromatch/">https://github.com/micromatch/micromatch/</a>
+    </p>
+    <p>
+        License: MIT License<br/>
+    </p>
+    <h3 class="mono"><a name=":mime-db:1.51.0">/mime-db 1.51.0</a></h3>
+    <p>Media Type Database</p>
+    <p>
+        Website: <a href=""></a><br/>
+        Source: <a href="https://github.com/jshttp/mime-db/">https://github.com/jshttp/mime-db/</a>
+    </p>
+    <p>
+        License: MIT License<br/>
+    </p>
+    <h3 class="mono"><a name=":mime-types:2.1.34">/mime-types 2.1.34</a></h3>
+    <p>The ultimate javascript content-type utility.</p>
+    <p>
+        Website: <a href=""></a><br/>
+        Source: <a href="https://github.com/jshttp/mime-types/">https://github.com/jshttp/mime-types/</a>
+    </p>
+    <p>
+        License: MIT License<br/>
+    </p>
+    <h3 class="mono"><a name=":minimalistic-assert:1.0.1">/minimalistic-assert 1.0.1</a></h3>
+    <p>minimalistic-assert ===</p>
+    <p>
+        Website: <a href=""></a><br/>
+        Source: <a href="https://github.com/calvinmetcalf/minimalistic-assert/">https://github.com/calvinmetcalf/minimalistic-assert/</a>
+    </p>
+    <p>
+        License: ISC License<br/>
+    </p>
+    <h3 class="mono"><a name=":minimalistic-crypto-utils:1.0.1">/minimalistic-crypto-utils 1.0.1</a></h3>
+    <p>Minimalistic tools for JS crypto modules</p>
+    <p>
+        Website: <a href=""></a><br/>
+        Source: <a href="https://github.com/indutny/minimalistic-crypto-utils/">https://github.com/indutny/minimalistic-crypto-utils/</a>
+    </p>
+    <p>
+        License: MIT License<br/>
+    </p>
+    <h3 class="mono"><a name=":minimatch:3.1.2">/minimatch 3.1.2</a></h3>
+    <p>a glob matcher in javascript</p>
+    <p>
+        Website: <a href=""></a><br/>
+        Source: <a href="https://github.com/isaacs/minimatch/">https://github.com/isaacs/minimatch/</a>
+    </p>
+    <p>
+        License: ISC License<br/>
+    </p>
+    <h3 class="mono"><a name=":ms:2.1.2">/ms 2.1.2</a></h3>
+    <p>Tiny millisecond conversion utility</p>
+    <p>
+        Website: <a href=""></a><br/>
+        Source: <a href="https://github.com/vercel/ms/">https://github.com/vercel/ms/</a>
+    </p>
+    <p>
+        License: MIT License<br/>
+    </p>
+    <h3 class="mono"><a name=":once:1.4.0">/once 1.4.0</a></h3>
+    <p>Run a function exactly one time</p>
+    <p>
+        Website: <a href=""></a><br/>
+        Source: <a href="https://github.com/isaacs/once/">https://github.com/isaacs/once/</a>
+    </p>
+    <p>
+        License: ISC License<br/>
+    </p>
+    <h3 class="mono"><a name=":p-map:4.0.0">/p-map 4.0.0</a></h3>
+    <p>Map over promises concurrently</p>
+    <p>
+        Website: <a href=""></a><br/>
+        Source: <a href="https://github.com/sindresorhus/p-map/">https://github.com/sindresorhus/p-map/</a>
+    </p>
+    <p>
+        License: MIT License<br/>
+    </p>
+    <h3 class="mono"><a name=":path-is-absolute:1.0.1">/path-is-absolute 1.0.1</a></h3>
+    <p>Node.js 0.12 path.isAbsolute() ponyfill</p>
+    <p>
+        Website: <a href=""></a><br/>
+        Source: <a href="https://github.com/sindresorhus/path-is-absolute/">https://github.com/sindresorhus/path-is-absolute/</a>
+    </p>
+    <p>
+        License: MIT License<br/>
+    </p>
+    <h3 class="mono"><a name=":path-type:4.0.0">/path-type 4.0.0</a></h3>
+    <p>Check if a path is a file, directory, or symlink</p>
+    <p>
+        Website: <a href=""></a><br/>
+        Source: <a href="https://github.com/sindresorhus/path-type/">https://github.com/sindresorhus/path-type/</a>
+    </p>
+    <p>
+        License: MIT License<br/>
+    </p>
+    <h3 class="mono"><a name=":pend:1.2.0">/pend 1.2.0</a></h3>
+    <p>dead-simple optimistic async helper</p>
+    <p>
+        Website: <a href=""></a><br/>
+        Source: <a href=""></a>
+    </p>
+    <p>
+        License: MIT License<br/>
+    </p>
+    <h3 class="mono"><a name=":picomatch:2.3.1">/picomatch 2.3.1</a></h3>
+    <p>Blazing fast and accurate glob matcher written in JavaScript, with no dependencies and full support for standard and extended Bash glob features, including braces, extglobs, POSIX brackets, and regular expressions.</p>
+    <p>
+        Website: <a href=""></a><br/>
+        Source: <a href="https://github.com/micromatch/picomatch/">https://github.com/micromatch/picomatch/</a>
+    </p>
+    <p>
+        License: MIT License<br/>
+    </p>
+    <h3 class="mono"><a name=":proxy-from-env:1.1.0">/proxy-from-env 1.1.0</a></h3>
+    <p>Offers getProxyForUrl to get the proxy URL for a URL, respecting the *_PROXY (e.g. HTTP_PROXY) and NO_PROXY environment variables.</p>
+    <p>
+        Website: <a href=""></a><br/>
+        Source: <a href="https://github.com/Rob--W/proxy-from-env/">https://github.com/Rob--W/proxy-from-env/</a>
+    </p>
+    <p>
+        License: MIT License<br/>
+    </p>
+    <h3 class="mono"><a name=":pump:3.0.0">/pump 3.0.0</a></h3>
+    <p>pipe streams together and close all of them if one of them closes</p>
+    <p>
+        Website: <a href=""></a><br/>
+        Source: <a href="https://github.com/mafintosh/pump/">https://github.com/mafintosh/pump/</a>
+    </p>
+    <p>
+        License: MIT License<br/>
+    </p>
+    <h3 class="mono"><a name=":queue-microtask:1.2.3">/queue-microtask 1.2.3</a></h3>
+    <p>fast, tiny `queueMicrotask` shim for modern engines</p>
+    <p>
+        Website: <a href=""></a><br/>
+        Source: <a href="https://github.com/feross/queue-microtask/">https://github.com/feross/queue-microtask/</a>
+    </p>
+    <p>
+        License: MIT License<br/>
+    </p>
+    <h3 class="mono"><a name=":reusify:1.0.4">/reusify 1.0.4</a></h3>
+    <p>Reuse objects and functions with style</p>
+    <p>
+        Website: <a href=""></a><br/>
+        Source: <a href="https://github.com/mcollina/reusify/">https://github.com/mcollina/reusify/</a>
+    </p>
+    <p>
+        License: MIT License<br/>
+    </p>
+    <h3 class="mono"><a name=":rimraf:3.0.2">/rimraf 3.0.2</a></h3>
+    <p>A deep deletion module for node (like `rm -rf`)</p>
+    <p>
+        Website: <a href=""></a><br/>
+        Source: <a href="https://github.com/isaacs/rimraf/">https://github.com/isaacs/rimraf/</a>
+    </p>
+    <p>
+        License: ISC License<br/>
+    </p>
+    <h3 class="mono"><a name=":run-parallel:1.2.0">/run-parallel 1.2.0</a></h3>
+    <p>Run an array of functions in parallel</p>
+    <p>
+        Website: <a href=""></a><br/>
+        Source: <a href="https://github.com/feross/run-parallel/">https://github.com/feross/run-parallel/</a>
+    </p>
+    <p>
+        License: MIT License<br/>
+    </p>
+    <h3 class="mono"><a name=":safe-buffer:5.2.1">/safe-buffer 5.2.1</a></h3>
+    <p>Safer Node.js Buffer API</p>
+    <p>
+        Website: <a href=""></a><br/>
+        Source: <a href="https://github.com/feross/safe-buffer/">https://github.com/feross/safe-buffer/</a>
+    </p>
+    <p>
+        License: MIT License<br/>
+    </p>
+    <h3 class="mono"><a name=":safer-buffer:2.1.2">/safer-buffer 2.1.2</a></h3>
+    <p>Modern Buffer API polyfill without footguns</p>
+    <p>
+        Website: <a href=""></a><br/>
+        Source: <a href="https://github.com/ChALkeR/safer-buffer/">https://github.com/ChALkeR/safer-buffer/</a>
+    </p>
+    <p>
+        License: MIT License<br/>
+    </p>
+    <h3 class="mono"><a name=":slash:3.0.0">/slash 3.0.0</a></h3>
+    <p>Convert Windows backslash paths to slash paths</p>
+    <p>
+        Website: <a href=""></a><br/>
+        Source: <a href="https://github.com/sindresorhus/slash/">https://github.com/sindresorhus/slash/</a>
+    </p>
+    <p>
+        License: MIT License<br/>
+    </p>
+    <h3 class="mono"><a name=":tcp-port-used:1.0.2">/tcp-port-used 1.0.2</a></h3>
+    <p>A simple Node.js module to check if a TCP port is already bound.</p>
+    <p>
+        Website: <a href=""></a><br/>
+        Source: <a href="https://github.com/stdarg/tcp-port-used/">https://github.com/stdarg/tcp-port-used/</a>
+    </p>
+    <p>
+        License: MIT License<br/>
+    </p>
+    <h3 class="mono"><a name=":to-regex-range:5.0.1">/to-regex-range 5.0.1</a></h3>
+    <p>Pass two numbers, get a regex-compatible source string for matching ranges. Validated against more than 2.78 million test assertions.</p>
+    <p>
+        Website: <a href=""></a><br/>
+        Source: <a href="https://github.com/micromatch/to-regex-range/">https://github.com/micromatch/to-regex-range/</a>
+    </p>
+    <p>
+        License: MIT License<br/>
+    </p>
+    <h3 class="mono"><a name=":wrappy:1.0.2">/wrappy 1.0.2</a></h3>
+    <p>Callback wrapping utility</p>
+    <p>
+        Website: <a href=""></a><br/>
+        Source: <a href="https://github.com/npm/wrappy/">https://github.com/npm/wrappy/</a>
+    </p>
+    <p>
+        License: ISC License<br/>
+    </p>
+    <h3 class="mono"><a name=":yauzl:2.10.0">/yauzl 2.10.0</a></h3>
+    <p>yet another unzip library for node</p>
+    <p>
+        Website: <a href=""></a><br/>
+        Source: <a href="https://github.com/thejoshwolfe/yauzl/">https://github.com/thejoshwolfe/yauzl/</a>
+    </p>
+    <p>
+        License: MIT License<br/>
+    </p>
+    <h3 class="mono"><a name="@nodelib:fs.scandir:2.1.5">@nodelib/fs.scandir 2.1.5</a></h3>
+    <p>List files and directories inside the specified directory</p>
+    <p>
+        Website: <a href=""></a><br/>
+        Source: <a href="https://github.com/nodelib/nodelib/">https://github.com/nodelib/nodelib/</a>
+    </p>
+    <p>
+        License: MIT License<br/>
+    </p>
+    <h3 class="mono"><a name="@nodelib:fs.stat:2.0.5">@nodelib/fs.stat 2.0.5</a></h3>
+    <p>Get the status of a file with some features</p>
+    <p>
+        Website: <a href=""></a><br/>
+        Source: <a href="https://github.com/nodelib/nodelib/">https://github.com/nodelib/nodelib/</a>
+    </p>
+    <p>
+        License: MIT License<br/>
+    </p>
+    <h3 class="mono"><a name="@nodelib:fs.walk:1.2.8">@nodelib/fs.walk 1.2.8</a></h3>
+    <p>A library for efficiently walking a directory recursively</p>
+    <p>
+        Website: <a href=""></a><br/>
+        Source: <a href="https://github.com/nodelib/nodelib/">https://github.com/nodelib/nodelib/</a>
+    </p>
+    <p>
+        License: MIT License<br/>
+    </p>
+    <h3 class="mono"><a name="@testim:chrome-version:1.1.3">@testim/chrome-version 1.1.3</a></h3>
+    <p>Finds the version of Chrome that is installed on your machine</p>
+    <p>
+        Website: <a href=""></a><br/>
+        Source: <a href="https://github.com/testimio/chrome-version/">https://github.com/testimio/chrome-version/</a>
+    </p>
+    <p>
+        License: MIT License<br/>
+    </p>
+    <h3 class="mono"><a name="@types:node:17.0.2">@types/node 17.0.2</a></h3>
+    <p>TypeScript definitions for Node.js</p>
+    <p>
+        Website: <a href=""></a><br/>
+        Source: <a href="https://github.com/DefinitelyTyped/DefinitelyTyped/">https://github.com/DefinitelyTyped/DefinitelyTyped/</a>
+    </p>
+    <p>
+        License: MIT License<br/>
+    </p>
+    <h3 class="mono"><a name="@types:yauzl:2.9.2">@types/yauzl 2.9.2</a></h3>
+    <p>TypeScript definitions for yauzl</p>
+    <p>
+        Website: <a href=""></a><br/>
+        Source: <a href="https://github.com/DefinitelyTyped/DefinitelyTyped/">https://github.com/DefinitelyTyped/DefinitelyTyped/</a>
+    </p>
+    <p>
+        License: MIT License<br/>
+    </p>
+
+</body>
+</html>

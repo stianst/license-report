@@ -1,0 +1,42 @@
+[
+  {
+    "dependency": "net.bytebuddy:byte-buddy",
+    "sourceUrl": "https://github.com/raphw/byte-buddy"
+  },
+  {
+    "dependency": "org.wildfly.common:wildfly-common",
+    "sourceUrl": "https://github.com/wildfly/wildfly-common/"
+  },
+  {
+    "dependency": "io.vertx:vertx-core",
+    "sourceUrl": "https://github.com/eclipse-vertx/vert.x"
+  },
+  {
+    "dependency": "io.vertx:vertx-web",
+    "sourceUrl": "https://github.com/vert-x3/vertx-web"
+  },
+  {
+    "dependency": "io.vertx:vertx-web-common",
+    "sourceUrl": "https://github.com/vert-x3/vertx-web"
+  },
+  {
+    "dependency": "io.vertx:vertx-auth-common",
+    "sourceUrl": "https://github.com/eclipse-vertx/vertx-auth"
+  },
+  {
+    "dependency": "io.vertx:vertx-bridge-common",
+    "sourceUrl": "https://github.com/vert-x3/vertx-bridge-common"
+  },
+  {
+    "dependency": "io.vertx:vertx-codegen",
+    "sourceUrl": "https://github.com/eclipse-vertx/vertx-codegen"
+  },
+  {
+    "dependency": "io.vertx:vertx-web-client",
+    "sourceUrl": "https://github.com/vert-x3/vertx-web/"
+  },
+  {
+    "dependency": "dk.brics.automaton:automaton",
+    "sourceUrl": "https://github.com/cs-au-dk/dk.brics.automaton"
+  }
+]
