@@ -9,6 +9,8 @@ import org.keycloak.license.licenses.spdx.SpdxLicenses;
 import org.keycloak.license.repository.RepositoryInfo;
 import org.keycloak.license.repository.RepositoryManager;
 
+import java.io.IOException;
+import java.net.URISyntaxException;
 import java.util.Collection;
 import java.util.Comparator;
 import java.util.LinkedList;
@@ -42,7 +44,7 @@ public class ReportBean {
         return spdxLicenses;
     }
 
-    public void add(Dependency dependency) {
+    public void add(Dependency dependency) throws URISyntaxException, IOException {
         RepositoryInfo repositoryInfo = repositoryManager.getRepositoryInfo(dependency);
 
         License optimalLicense = spdxLicenses.findOptimalLicense(dependency);

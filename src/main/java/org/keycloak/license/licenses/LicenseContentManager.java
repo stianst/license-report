@@ -4,6 +4,7 @@ import jakarta.annotation.PostConstruct;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import org.keycloak.license.config.Config;
+import org.keycloak.license.config.LicenseContentMapping;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -34,6 +35,8 @@ public class LicenseContentManager {
             return null;
         }
 
+        licenseUrl = getMappedUrl(licenseUrl);
+
         String id = URLEncoder.encode(licenseUrl, StandardCharsets.UTF_8);
         File file = new File(licenseCache, id);
         if (!file.isFile()) {
@@ -46,6 +49,10 @@ public class LicenseContentManager {
         try (InputStream is = new FileInputStream(file)) {
             return new String(is.readAllBytes(),StandardCharsets.UTF_8);
         }
+    }
+
+    private String getMappedUrl(String licenseUrl) {
+        return config.getLicenseContentMappings().stream().filter(m -> m.getLicenseUrl().equals(licenseUrl)).map(LicenseContentMapping::getMapsTo).findFirst().orElse(licenseUrl);
     }
 
 }

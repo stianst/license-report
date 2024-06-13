@@ -9,12 +9,12 @@ public class GitHubRepositoryUrl implements RepositoryUrl {
     private final String repository;
 
     public static GitHubRepositoryUrl parse(String url) {
-        if ((url.startsWith("scm:git:git") && url.contains("github.com")) || (url.startsWith("git+https://github.com"))) {
+        if ((url.startsWith("scm:git:git") && url.contains("github.com")) || (url.startsWith("git+https://github.com")) || url.startsWith("git://github.com")) {
             String[] s = url.split("github\\.com.")[1].split("/");
             String owner = s[0];
             String repository = s[1].replace(".git", "");
             return new GitHubRepositoryUrl(owner, repository);
-        } else if ((url.startsWith("https") || url.startsWith("http")) && url.contains("://github.com")) {
+        } else if ((url.startsWith("https") || url.startsWith("http")) && (url.contains("://github.com") || url.contains("://www.github.com"))) {
             String[] s = url.split("://")[1].split("/");
             String owner = s[1];
             String repository = s[2].replace(".git", "");

@@ -39,12 +39,12 @@ public class LicenseReport {
     Config config;
 
     public void createReport() {
-        ReportBean reportBean = new ReportBean(repositoryManager, licenseContentManager, spdxLicenses);
-        for (Dependency d : dependencyManager.getDependencies()) {
-            reportBean.add(d);
-        }
-
         try {
+            ReportBean reportBean = new ReportBean(repositoryManager, licenseContentManager, spdxLicenses);
+            for (Dependency d : dependencyManager.getDependencies()) {
+                reportBean.add(d);
+            }
+
             PrintWriter pw = new PrintWriter("third-party-notice-" + config.getProfile() + ".html");
             String report = thirdPartyNotice.data("report", reportBean).render();
             pw.write(report);

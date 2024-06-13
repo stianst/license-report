@@ -62,7 +62,7 @@
                 {#if dependency.license.licenseContentPlainText}
                     <pre class="licenseText">{dependency.license.licenseContent}</pre>
                 {#else}
-                    <div class="licenseText">{dependency.license.licenseContent}</div>
+                    <div class="licenseText">{dependency.license.licenseContent.raw}</div>
                 {/if}
             {/if}
         {/if}

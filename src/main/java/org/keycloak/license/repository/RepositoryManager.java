@@ -9,6 +9,7 @@ import org.jboss.logging.Logger;
 import org.keycloak.license.config.Config;
 import org.keycloak.license.dependencies.Dependency;
 import org.keycloak.license.dependencies.DependencyManager;
+import org.keycloak.license.http.InvalidResponseException;
 import org.keycloak.license.http.SimpleHttp;
 import org.keycloak.license.repository.bitbucket.BitBucketRepositoryUrl;
 import org.keycloak.license.repository.github.GitHubRepository;
@@ -125,6 +126,11 @@ public class RepositoryManager {
                     } else {
                         repositoryInfo.setTagUrl(repositoryUrl.getTagWebUrl(tagPattern));
                     }
+                } catch (InvalidResponseException e) {
+                    LOGGER.warnv("Failed to list tags; dependency={0}, error={1}", dependency.getIdentifier(), e.getMessage());
+                    if (e.getStatusCode() == 404) {
+                        repositoryInfo.setTagUrl(TagResolver.UNRESOLVABLE);
+                    }
                 } catch (IOException e) {
                     LOGGER.warnv("Failed to list tags; dependency={0}, error={1}", dependency.getIdentifier(), e.getMessage());
                 }
@@ -149,6 +155,10 @@ public class RepositoryManager {
                         repositoryInfo.setLicenseUrl(license);
                     } else {
                         LOGGER.warnv("License not found; dependency={0}, files={1}", dependency.getIdentifier(), String.join(",", files));
+                        if (dependency.getLicenseInfo().size() == 1 && dependency.getLicenseInfo().get(0).getUrl() != null) {
+                            repositoryInfo.setLicenseUrl(dependency.getLicenseInfo().get(0).getUrl());
+                            LOGGER.infov("Using license URL for dependency metadata; dependency={0}, licenseUrl={1}", dependency.getIdentifier(), dependency.getLicenseInfo().get(0).getUrl());
+                        }
                     }
                 } catch (IOException e) {
                     LOGGER.warnv("Failed to list files; dependency={0}, error={1}", dependency.getIdentifier(), e.getMessage());

@@ -30,5 +30,13 @@
     "sourceUrl" : "https://gitlab.ow2.org/asm/asm/",
     "tagUrl" : "UNRESOLVABLE",
     "licenseUrl" : "https://gitlab.ow2.org/asm/asm/-/raw/master/LICENSE.txt"
+  },
+  {
+    "sourceUrl" : "https://github.com/substack/text-table/",
+    "licenseUrl" : "https://spdx.org/licenses/MIT.txt"
+  },
+  {
+    "sourceUrl" : "https://github.com/sindresorhus/type-fest/",
+    "licenseUrl" : "https://raw.githubusercontent.com/sindresorhus/type-fest/main/license-mit"
   }
 ]

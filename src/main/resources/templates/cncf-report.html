@@ -36,54 +36,5 @@
 {/each}
 </table>
 
-
-<h1>Licenses</h1>
-<table>
-    <tr>
-        <th>Name</th>
-        <th>Identifier</th>
-        <th>SPDX Listed?</th>
-        <th>FSF Free/Libre?</th>
-        <th>OSI Approved?</th>
-        <th>CNCF Approved?</th>
-        <th>Dependencies</th>
-    </tr>
-
-    {#each license in report.licenses}
-        {#if license.spdxLicense.fsfLibre || license.spdxLicense.osiApproved || license.spdxLicense.cncfApproved}
-            <tr>
-        {#else}
-            <tr class="bad">
-        {/if}
-
-        {#if license.spdxLicense.licenseReference != null}
-            <td>
-                {#let referencedLicense=report.spdxLicenses.findByLicenseId(license.spdxLicense.licenseReference)}
-                <a href="{license.spdxLicense.reference}">{license.spdxLicense.name}</a>
-                (<a href="{referencedLicense.reference}">{referencedLicense.name}</a>)
-            </td>
-            <td>{license.spdxLicense.licenseId} ({license.spdxLicense.licenseReference})</td>
-        {/if}
-
-        {#if license.spdxLicense.licenseReference == null}
-            <td><a href="{license.spdxLicense.reference}">{license.spdxLicense.name}</a></td>
-            <td>{license.spdxLicense.licenseId}</td>
-        {/if}
-
-        <td>{license.spdxLicense.spdxListed ? "Y" : ""}</td>
-        <td>{license.spdxLicense.fsfLibre ? "Y" : ""}</td>
-        <td>{license.spdxLicense.osiApproved ? "Y" : ""}</td>
-        <td>{license.spdxLicense.cncfApproved ? "Y" : ""}</td>
-        <td>
-            <div>
-                {#each dependency in license.dependencies}
-                    {dependency.reference}<br/>
-                {/each}
-            </div>
-        </td>
-        </tr>
-    {/each}
-</table>
-
 </body>
 </html>

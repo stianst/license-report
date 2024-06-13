@@ -94,29 +94,35 @@ public class VerifyManager {
     private boolean verifyLicenses() {
         int invalid = 0;
         for (Dependency d : dependencyManager.getDependencies()) {
-            boolean v = true;
-            for (Dependency.DependencyLicenseInfo i : d.getLicenseInfo()) {
-                License license = spdxLicenses.findLicense(i);
-                if (license == null) {
-                    RepositoryInfo repositoryInfo = repositoryManager.getRepositoryInfo(d);
-                    String sourceUrl = repositoryInfo != null ? repositoryInfo.getSourceUrl() : d.getVcsUrl();
+            List<License> byDependency = spdxLicenses.findByDependency(d);
+            if (d.getLicenseInfo().isEmpty() && (byDependency == null || byDependency.isEmpty())) {
+                LOGGER.warnv("No license information; dependency={0}", d.getIdentifier());
+                invalid++;
+            } else {
+                boolean v = true;
+                for (Dependency.DependencyLicenseInfo i : d.getLicenseInfo()) {
+                    License license = spdxLicenses.findLicense(i);
+                    if (license == null) {
+                        RepositoryInfo repositoryInfo = repositoryManager.getRepositoryInfo(d);
+                        String sourceUrl = repositoryInfo != null ? repositoryInfo.getSourceUrl() : d.getVcsUrl();
 
-                    LOGGER.warnv("Unmapped license; dependency={0}, licenseId={1}, licenseName={2}, licenseUrl={3}, sourceUrl={4}", d.getIdentifier(), i.getId(), i.getName(), i.getUrl(), sourceUrl);
-                    invalid++;
-                    v = false;
+                        LOGGER.warnv("Unmapped license; dependency={0}, licenseId={1}, licenseName={2}, licenseUrl={3}, sourceUrl={4}", d.getIdentifier(), i.getId(), i.getName(), i.getUrl(), sourceUrl);
+                        invalid++;
+                        v = false;
+                    }
                 }
-            }
 
-            if (v) {
-                License optimalLicense = spdxLicenses.findOptimalLicense(d);
-                if (optimalLicense == null) {
-                    invalid++;
-                    LOGGER.warnv("Optimal license not found; dependency={0}", d.getIdentifier());
+                if (v) {
+                    License optimalLicense = spdxLicenses.findOptimalLicense(d);
+                    if (optimalLicense == null) {
+                        invalid++;
+                        LOGGER.warnv("Optimal license not found; dependency={0}", d.getIdentifier());
+                    }
                 }
             }
         }
         if (invalid > 0) {
-            LOGGER.errorv("Missing license url for {0} dependencies", invalid);
+            LOGGER.errorv("Invalid license for {0} dependencies", invalid);
             return false;
         }
         return true;

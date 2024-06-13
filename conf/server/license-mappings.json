@@ -87,7 +87,8 @@
   {
     "licenseId": "MIT",
     "dependencyMappings": [
-      "font-awesome"
+      ":font-awesome",
+      ":type-fest"
     ],
     "nameMappings": [
       "The MIT License",
@@ -97,7 +98,7 @@
   {
     "licenseId": "OFL-1.1",
     "dependencyMappings": [
-      "font-awesome"
+      ":font-awesome"
     ]
   },
   {
@@ -123,6 +124,9 @@
     "licenseId": "BSD-3-Clause",
     "nameMappings": [
       "BSD 3-Clause License"
+    ],
+    "dependencyMappings": [
+      ":json-schema"
     ]
   },
   {

@@ -11,6 +11,12 @@ public class GitHubRepositoryUrlTest {
         Assertions.assertNotNull(url);
         Assertions.assertEquals("https://github.com/owner/repository/", url.getSourceUrl());
     }
+    @Test
+    public void testWithWww() {
+        GitHubRepositoryUrl url = GitHubRepositoryUrl.parse("https://www.github.com/owner/repository");
+        Assertions.assertNotNull(url);
+        Assertions.assertEquals("https://github.com/owner/repository/", url.getSourceUrl());
+    }
 
     @Test
     public void testDirectoryUrl() {
@@ -51,6 +57,13 @@ public class GitHubRepositoryUrlTest {
         GitHubRepositoryUrl url = GitHubRepositoryUrl.parse("git+https://github.com/ast-grep/ast-grep.git");
         Assertions.assertNotNull(url);
         Assertions.assertEquals("https://github.com/ast-grep/ast-grep/", url.getSourceUrl());
+    }
+
+    @Test
+    public void git() {
+        GitHubRepositoryUrl url = GitHubRepositoryUrl.parse("git://github.com/kpdecker/jsdiff.git");
+        Assertions.assertNotNull(url);
+        Assertions.assertEquals("https://github.com/kpdecker/jsdiff/", url.getSourceUrl());
     }
 
     @Test

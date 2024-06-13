@@ -5,6 +5,7 @@ import jakarta.enterprise.context.ApplicationScoped;
 
 import java.io.IOException;
 import java.net.URI;
+import java.net.URISyntaxException;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
@@ -33,10 +34,14 @@ public class SimpleHttp {
     }
 
     public <T> T get(Class<T> type, String url, Map<String, String> headers) throws IOException {
+        URI uri = null;
         try {
-            URI uri = new URI(url);
+            uri = new URI(url);
+        } catch (URISyntaxException e) {
+            throw new IOException("Invalid URL: " + e.getMessage(), e);
+        }
 
-            HttpRequest.Builder requestBuilder = HttpRequest.newBuilder(uri);
+        HttpRequest.Builder requestBuilder = HttpRequest.newBuilder(uri);
             if (headers != null) {
                 for (Map.Entry<String, String> e : headers.entrySet()) {
                     requestBuilder.header(e.getKey(), e.getValue());
@@ -45,15 +50,17 @@ public class SimpleHttp {
 
             HttpRequest request = requestBuilder.GET().build();
 
-            HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
-            if (response.statusCode() != 200) {
-                throw new IOException("Request to " + url + " failed: " + response.statusCode());
-            }
-
-            return objectMapper.readValue(response.body(), type);
-        } catch (Exception e) {
-            throw new IOException("Request to " + url + " failed", e);
+        HttpResponse<String> response = null;
+        try {
+            response = client.send(request, HttpResponse.BodyHandlers.ofString());
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
         }
+        if (response.statusCode() != 200) {
+            throw new InvalidResponseException(url, response.statusCode());
+        }
+
+        return objectMapper.readValue(response.body(), type);
     }
 
 

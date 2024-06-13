@@ -14,7 +14,7 @@ git checkout <VERSION>
 
 ```
 cd quarkus/deployment
-mvn org.cyclonedx:cyclonedx-maven-plugin:makeBom -Dcyclonedx.skipAttach=true
+mvn org.cyclonedx:cyclonedx-maven-plugin:makeBom -Dcyclonedx.skipAttach=true -f quarkus/deployment
 ```
 
 Path to the generated file is `quarkus/deployment/target/bom.json`.

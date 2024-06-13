@@ -19,6 +19,7 @@ public class Config {
     private final List<License> additionalLicenses;
     private final List<LicenseMapping> licenseMappings;
     private final List<RepositoryInfo> additionalRepositoryInfos;
+    private final List<LicenseContentMapping> licenseContentMappings;
     private final String profile;
 
     public Config(SourceMappings sourceMappings, List<String> excludedDependencies, CncfApproved cncfApproved, List<License> additionalLicenses, List<LicenseMapping> licenseMappings, List<RepositoryInfo> additionalRepositoryInfos) {
@@ -31,6 +32,7 @@ public class Config {
         this.additionalLicenses = additionalLicenses;
         this.licenseMappings = licenseMappings;
         this.additionalRepositoryInfos = additionalRepositoryInfos;
+        this.licenseContentMappings = new LinkedList<>();
     }
 
     public Config(File configDir, String profile) throws IOException {
@@ -84,6 +86,13 @@ public class Config {
         } else {
             additionalRepositoryInfos = new LinkedList<>();
         }
+
+        File licenseContentMappingsFile = new File(configDir, "license-content-mappings.json");
+        if (licenseContentMappingsFile.isFile()) {
+            licenseContentMappings = List.of(objectMapper.readValue(licenseContentMappingsFile, LicenseContentMapping[].class));
+        } else {
+            licenseContentMappings = new LinkedList<>();
+        }
     }
 
     public String getProfile() {
@@ -126,5 +135,9 @@ public class Config {
 
     public List<RepositoryInfo> getAdditionalRepositoryInfos() {
         return additionalRepositoryInfos;
+    }
+
+    public List<LicenseContentMapping> getLicenseContentMappings() {
+        return licenseContentMappings;
     }
 }

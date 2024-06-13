@@ -70,5 +70,21 @@
   {
     "dependency": "@ast-grep:napi",
     "sourceUrl": "https://github.com/ast-grep/ast-grep/"
+  },
+  {
+    "dependency": ":commondir",
+    "sourceUrl": "https://github.com/caolan/async"
+  },
+  {
+    "dependency": ":async",
+    "sourceUrl": "https://github.com/caolan/async"
+  },
+  {
+    "dependency": ":jju",
+    "sourceUrl": "https://github.com/rlidwka/jju"
+  },
+  {
+    "dependency": ":prop-types",
+    "sourceUrl": "https://github.com/facebook/prop-types"
   }
 ]
