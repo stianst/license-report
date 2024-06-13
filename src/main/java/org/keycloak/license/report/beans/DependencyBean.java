@@ -64,6 +64,10 @@ public class DependencyBean {
         return repositoryInfo.getSourceUrl();
     }
 
+    public String getPackageUrl() {
+        return dependency.getPurl();
+    }
+
     public String getWebUrl() {
         return dependency.getWebsiteUrl();
     }
