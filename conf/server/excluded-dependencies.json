@@ -1,9 +1,5 @@
 [
-  ":bootstrap-touchspin:.*",
-  ":drmonty-datatables-colvis:.*",
   ":google-code-prettify:.*",
-  "org.keycloak:.*",
-  ":admin-ui:.*",
   "@4tw:cypress-drag-drop:.*",
   ":chai:.*",
   ":cypress:.*",
@@ -24,11 +20,9 @@
   "@faker-js:faker:.*",
   ":husky:.*",
   ":jsdom:.*",
-  "@keycloak:keycloak-admin-client:.*",
   ":ldap-server-mock:.*",
   ":lightningcss:.*",
   ":lint-staged:.*",
-  ":lodash-es:.*",
   ":mocha:.*",
   "@playwright:test:.*",
   ":prettier:.*",
@@ -45,7 +39,6 @@
   "@testing-library:dom:.*",
   "@testing-library:jest-dom:.*",
   "@testing-library:react:.*",
-  ":tslib:.*",
   ":ts-node:.*",
   "@types:chai:.*",
   ":typescript:.*",
@@ -66,5 +59,12 @@
   ":vite-plugin-lib-inject-css:.*",
   ":vitest:.*",
   ":wireit:.*",
-  ":lightningcss-.*"
+  ":lightningcss-.*",
+  ":axe-core:.*",
+  ":caniuse-lite.*",
+  ":humanize-duration.*",
+  ":jackspeak.*",
+  ":path-scurry.*",
+  ":postcss-values-parser.*",
+  ":tweetnacl.*"
 ]
