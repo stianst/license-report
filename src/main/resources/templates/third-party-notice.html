@@ -53,10 +53,10 @@
     <p>
         Website: <a href="{dependency.webUrl}">{dependency.webUrl}</a><br/>
         Source: <a href="{dependency.tagSourceUrl}">{dependency.tagSourceUrl}</a><br/>
-        Package: {dependency.packageUrl}
+        Package: <a href="{dependency.packageUrl}">{dependency.package}</a>
     </p>
     <p>
-        License: {dependency.license.name}<br/>
+        License: <a href="{dependency.license.license.reference}">{dependency.license.name} ({dependency.license.license.licenseId})</a><br/>
         {#if dependency.license.licenseContentUrl != null}
             License text: <a href="{dependency.license.licenseContentUrl}">{dependency.license.licenseContentUrl}</a>
             {#if dependency.license.licenseContent != null}

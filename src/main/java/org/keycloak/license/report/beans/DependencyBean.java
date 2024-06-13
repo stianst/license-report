@@ -3,6 +3,7 @@ package org.keycloak.license.report.beans;
 import io.quarkus.runtime.annotations.RegisterForReflection;
 import org.jboss.logging.Logger;
 import org.keycloak.license.dependencies.Dependency;
+import org.keycloak.license.dependencies.PackageUrlParser;
 import org.keycloak.license.licenses.spdx.License;
 import org.keycloak.license.licenses.spdx.SpdxLicenses;
 import org.keycloak.license.repository.RepositoryInfo;
@@ -64,8 +65,12 @@ public class DependencyBean {
         return repositoryInfo.getSourceUrl();
     }
 
-    public String getPackageUrl() {
+    public String getPackage() {
         return dependency.getPurl();
+    }
+
+    public String getPackageUrl() {
+        return PackageUrlParser.toUrl(dependency.getPurl());
     }
 
     public String getWebUrl() {
