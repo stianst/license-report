@@ -23,9 +23,9 @@ public class LicenseReportTest {
     @Test
     public void generate(QuarkusMainLauncher launcher) {
         LaunchResult launch = launcher.launch(
-                "-p=server",
+                "-p=operator",
                 "report",
-                "--sbom=cache/keycloak/bom.json"
+                "--sbom=cache/keycloak/operator/target/bom.json"
         );
         Assertions.assertEquals(0, launch.exitCode());
 

@@ -14,5 +14,11 @@
     "urlMappings": [
       "https://www.apache.org/licenses/LICENSE-2.0.html"
     ]
+  },
+  {
+    "licenseId": "BSD-2-Clause",
+    "dependencyMappings": [
+      "dk.brics.automaton:automaton"
+    ]
   }
 ]

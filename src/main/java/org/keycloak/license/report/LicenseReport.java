@@ -23,6 +23,9 @@ public class LicenseReport {
     @Location("cncf-report.html")
     Template cncfReport;
 
+    @Location("cncf-report.md")
+    Template cncfReportMd;
+
     @Inject
     RepositoryManager repositoryManager;
 
@@ -54,6 +57,11 @@ public class LicenseReport {
             String report2 = cncfReport.data("report", reportBean).render();
             pw2.write(report2);
             pw2.close();
+
+            PrintWriter pw3 = new PrintWriter("cncf-report-" + config.getProfile() + ".md");
+            String report3 = cncfReportMd.data("report", reportBean).render();
+            pw3.write(report3);
+            pw3.close();
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

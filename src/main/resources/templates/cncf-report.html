@@ -19,10 +19,10 @@
         <th>Website</th>
         <th>Source repository</th>
     </tr>
-{#each dependency in report.dependencies}
+{#each dependency in report.uniqueDependencies}
 {#if !dependency.approvedByCncf}
     <tr>
-        <td>{dependency.reference}</td>
+        <td><a href="{dependency.packageUrl}">{#if dependency.group}{dependency.group}:{/if}{dependency.name}</a></td>
         <td>{dependency.description}</td>
         <td>
             {#each license in dependency.allDeclaredLicenses}

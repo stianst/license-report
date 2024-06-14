@@ -1,4 +1,5 @@
 [
+  "org.keycloak:.*",
   ":google-code-prettify:.*",
   "@4tw:cypress-drag-drop:.*",
   ":chai:.*",

@@ -132,4 +132,5 @@ public class License {
     public void setLicenseReference(String licenseReference) {
         this.licenseReference = licenseReference;
     }
+
 }
