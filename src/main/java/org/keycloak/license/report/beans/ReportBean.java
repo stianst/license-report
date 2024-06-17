@@ -11,30 +11,35 @@ import org.keycloak.license.repository.RepositoryManager;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
+import java.time.LocalDate;
+import java.time.OffsetDateTime;
+import java.time.ZoneOffset;
+import java.time.format.DateTimeFormatter;
 import java.util.Collection;
 import java.util.Comparator;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Objects;
 import java.util.Set;
-import java.util.function.Function;
-import java.util.function.Predicate;
 
 @RegisterForReflection
 public class ReportBean {
 
     private static final Logger LOGGER = Logger.getLogger(ReportBean.class);
+    private static final DateTimeFormatter DATE_TIME_FORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSSX");
 
     private final RepositoryManager repositoryManager;
     private final LicenseContentManager licenseContentManager;
     private final SpdxLicenses spdxLicenses;
     private List<LicenseBean> licenses = new LinkedList<>();
+    private final OffsetDateTime date;
 
     public ReportBean(RepositoryManager repositoryManager, LicenseContentManager licenseContentManager, SpdxLicenses spdxLicenses) {
         this.repositoryManager = repositoryManager;
         this.licenseContentManager = licenseContentManager;
         this.spdxLicenses = spdxLicenses;
+        this.date = OffsetDateTime.now(ZoneOffset.UTC);
     }
 
     public List<LicenseBean> getLicenses() {
@@ -78,4 +83,7 @@ public class ReportBean {
         licenseBean.add(new DependencyBean(dependency, repositoryInfo, new DependencyLicenseBean(repositoryInfo, licenseContentManager, optimalLicense), spdxLicenses));
     }
 
+    public String getDate() {
+        return date.toString();
+    }
 }

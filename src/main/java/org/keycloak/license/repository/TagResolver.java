@@ -30,6 +30,9 @@ public class TagResolver {
         if (tagUrl == null || tagUrl.equals(UNRESOLVABLE)) {
             return null;
         }
-        return tagUrl.replace("${version}", version);
+
+        String versionUnderscore = version.replace('.', '_');
+
+        return tagUrl.replace("${version}", version).replace("${versionUnderscore}", versionUnderscore);
     }
 }
