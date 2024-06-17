@@ -62,7 +62,7 @@ public class VerifyManager {
                     invalid++;
                     LOGGER.warnv("Missing tag url; dependency={0}, sourceUrl={1}", d.getIdentifier(), repositoryInfo.getSourceUrl());
                 } else if (repositoryInfo.getTagUrl().equals("UNRESOLVABLE")) {
-                    LOGGER.infov("Tag not resolvable; dependency={0}, sourceUrl={1}", d.getIdentifier(), repositoryInfo.getSourceUrl());
+                    LOGGER.debugv("Tag not resolvable; dependency={0}, sourceUrl={1}", d.getIdentifier(), repositoryInfo.getSourceUrl());
                 }
             }
         }

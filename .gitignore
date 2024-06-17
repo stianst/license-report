@@ -2,4 +2,6 @@ cache
 target
 .idea
 *.iml
-report.html
+cncf-report-*.html
+cncf-report-*.md
+third-party-notice-*.html

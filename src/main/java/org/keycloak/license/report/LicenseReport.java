@@ -4,6 +4,7 @@ import io.quarkus.qute.Location;
 import io.quarkus.qute.Template;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
+import org.jboss.logging.Logger;
 import org.keycloak.license.config.Config;
 import org.keycloak.license.dependencies.Dependency;
 import org.keycloak.license.dependencies.DependencyManager;
@@ -12,10 +13,15 @@ import org.keycloak.license.licenses.spdx.SpdxLicenses;
 import org.keycloak.license.report.beans.ReportBean;
 import org.keycloak.license.repository.RepositoryManager;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.io.PrintWriter;
 
 @ApplicationScoped
 public class LicenseReport {
+
+    private static final Logger LOGGER = Logger.getLogger(LicenseReport.class);
 
     @Location("third-party-notice.html")
     Template thirdPartyNotice;
@@ -48,23 +54,22 @@ public class LicenseReport {
                 reportBean.add(d);
             }
 
-            PrintWriter pw = new PrintWriter("third-party-notice-" + config.getProfile() + ".html");
-            String report = thirdPartyNotice.data("report", reportBean).render();
-            pw.write(report);
-            pw.close();
-
-            PrintWriter pw2 = new PrintWriter("cncf-report-" + config.getProfile() + ".html");
-            String report2 = cncfReport.data("report", reportBean).render();
-            pw2.write(report2);
-            pw2.close();
-
-            PrintWriter pw3 = new PrintWriter("cncf-report-" + config.getProfile() + ".md");
-            String report3 = cncfReportMd.data("report", reportBean).render();
-            pw3.write(report3);
-            pw3.close();
+            createReport(reportBean, thirdPartyNotice, "third-party-notice-" + config.getProfile() + ".html");
+            createReport(reportBean, cncfReport, "cncf-report-" + config.getProfile() + ".html");
+            createReport(reportBean, cncfReportMd, "cncf-report-" + config.getProfile() + ".md");
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
+    }
+
+    private void createReport(ReportBean reportBean, Template template, String outputFilename) throws IOException {
+        File outputFile = new File(outputFilename);
+        PrintWriter pw = new PrintWriter(new FileWriter(outputFile));
+        String report = template.data("report", reportBean).render();
+        pw.write(report);
+        pw.close();
+
+        LOGGER.infov("Created " + outputFile.getAbsoluteFile().toURI());
     }
 
 }
