@@ -49,11 +49,18 @@ public class ReportCommand implements Runnable {
 
         LOGGER.info("Verifying information");
         boolean valid = verifyManager.verify();
-        LOGGER.info(valid ? "Information valid" : "Found invalid information");
+
+        if (valid) {
+            LOGGER.info("Information valid");
+        } else {
+            LOGGER.error("Found invalid information");
+        }
 
         if (valid || ignoreValidation) {
             LOGGER.info("Creating reports");
             licenseReport.createReport();
+        } else {
+            System.exit(1);
         }
     }
 }
