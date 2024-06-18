@@ -9,24 +9,30 @@
     pre { border: 1px solid black; max-height: 300px; max-width: 1024px; overflow: auto; padding: 5px; text-wrap: wrap;
 </style>
 
-<h1>Non-approved dependencies</h1>
+<h2>Licenses</h2>
+<h3>IDs</h3>
+<p>{cncf.unapprovedLicenseIds}</p>
 
+<h3>Names</h3>
+<p>{cncf.unapprovedLicenseNames}</p>
+
+<h2>Component details</h2>
 <table>
     <tr>
-        <th>Dependency</th>
+        <th>Component</th>
         <th>Description</th>
         <th>License(s)</th>
         <th>Website</th>
         <th>Source repository</th>
     </tr>
-{#each dependency in report.uniqueDependencies}
+{#each dependency in cncf.uniqueDependencies}
 {#if !dependency.approvedByCncf}
     <tr>
         <td><a href="{dependency.packageUrl}">{#if dependency.group}{dependency.group}:{/if}{dependency.name}</a></td>
         <td>{dependency.description}</td>
         <td>
             {#each license in dependency.allDeclaredLicenses}
-            <p><a href="{license.reference}">{license.licenseId}</a></p>
+            {#if !license_isFirst} OR {/if}<a href="{license.reference}">{license.licenseId}</a>
             {/each}
         </td>
         <td><a href="{dependency.webUrl}">{dependency.webUrl}</a></td>

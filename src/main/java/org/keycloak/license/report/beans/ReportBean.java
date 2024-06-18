@@ -46,21 +46,11 @@ public class ReportBean {
         return licenses.stream().sorted(Comparator.comparing(LicenseBean::getId)).toList();
     }
 
-    public List<License> getUnapprovedLicenses() {
-        Set<String> s = new HashSet<>();
-        return getUniqueDependencies()
-                .stream().map(DependencyBean::getAllDeclaredLicenses).flatMap(Collection::stream)
-                .filter(l -> !l.isCncfApproved()).sorted(Comparator.comparing(License::getLicenseId)).filter(l -> s.add(l.getLicenseId())).toList();
-    }
 
     public List<DependencyBean> getDependencies() {
         return licenses.stream().map(LicenseBean::getDependencies).flatMap(Collection::stream).sorted(Comparator.comparing(DependencyBean::getReference)).toList();
     }
 
-    public List<DependencyBean> getUniqueDependencies() {
-        Set<String> s = new HashSet<>();
-        return licenses.stream().map(LicenseBean::getDependencies).flatMap(Collection::stream).filter(d -> s.add(d.getGroup() + ":" + d.getName())).sorted(Comparator.comparing(DependencyBean::getReference)).toList();
-    }
 
     public SpdxLicenses getSpdxLicenses() {
         return spdxLicenses;

@@ -10,6 +10,7 @@ import org.keycloak.license.dependencies.Dependency;
 import org.keycloak.license.dependencies.DependencyManager;
 import org.keycloak.license.licenses.LicenseContentManager;
 import org.keycloak.license.licenses.spdx.SpdxLicenses;
+import org.keycloak.license.report.beans.CncfBean;
 import org.keycloak.license.report.beans.ReportBean;
 import org.keycloak.license.repository.RepositoryManager;
 
@@ -54,18 +55,20 @@ public class LicenseReport {
                 reportBean.add(d);
             }
 
-            createReport(reportBean, thirdPartyNotice, "third-party-notice-" + config.getProfile() + ".html");
-            createReport(reportBean, cncfReport, "cncf-report-" + config.getProfile() + ".html");
-            createReport(reportBean, cncfReportMd, "cncf-report-" + config.getProfile() + ".md");
+            CncfBean cncfBean = new CncfBean(reportBean);
+
+            createReport(reportBean, cncfBean, thirdPartyNotice, "third-party-notice-" + config.getProfile() + ".html");
+            createReport(reportBean, cncfBean, cncfReport, "cncf-report-" + config.getProfile() + ".html");
+            createReport(reportBean, cncfBean, cncfReportMd, "cncf-report-" + config.getProfile() + ".md");
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
     }
 
-    private void createReport(ReportBean reportBean, Template template, String outputFilename) throws IOException {
+    private void createReport(ReportBean reportBean, CncfBean cncfBean, Template template, String outputFilename) throws IOException {
         File outputFile = new File(outputFilename);
         PrintWriter pw = new PrintWriter(new FileWriter(outputFile));
-        String report = template.data("report", reportBean).render();
+        String report = template.data("report", reportBean, "cncf", cncfBean).render();
         pw.write(report);
         pw.close();
 
