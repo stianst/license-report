@@ -26,6 +26,20 @@ public class LicenseReportTest {
                 "-p=keycloak",
                 "report",
                 "--sbom=cache/repositories/keycloak/bom.json",
+                "--sbom=cache/repositories/keycloak/quarkus/deployment/target/bom.json",
+                "--sbom=cache/repositories/keycloak/operator/target/bom.json",
+                "--ignore-validation"
+        );
+        Assertions.assertEquals(0, launch.exitCode());
+
+    }
+
+    @Test
+    public void releaseDates(QuarkusMainLauncher launcher) {
+        LaunchResult launch = launcher.launch(
+                "-p=keycloak",
+                "dates",
+                "--sbom=cache/repositories/keycloak/bom.json",
                 "--sbom=cache/repositories/keycloak/quarkus/deployment/target/bom.json"
                 ,"--sbom=cache/repositories/keycloak/operator/target/bom.json"
         );

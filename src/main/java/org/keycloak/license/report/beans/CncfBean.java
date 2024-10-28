@@ -1,7 +1,7 @@
 package org.keycloak.license.report.beans;
 
 import org.jboss.logging.Logger;
-import org.keycloak.license.licenses.spdx.License;
+import org.keycloak.license.config.CncfApproved;
 
 import java.time.format.DateTimeFormatter;
 import java.util.Collection;

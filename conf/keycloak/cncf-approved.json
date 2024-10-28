@@ -10,5 +10,87 @@
     "PostgreSQL",
     "X11",
     "Zlib"
+  ],
+  "exceptions": [
+    {
+      "dependency": "tslib",
+      "license": "0BSD"
+    },
+    {
+      "dependency": "com.h2database:h2",
+      "license": "EPL-1.0"
+    },
+    {
+      "dependency": "com.mysql:mysql-connector-j",
+      "license": "GPL-2.0-only"
+    },
+    {
+      "dependency": "jakarta.annotation:jakarta.annotation-api",
+      "license": "EPL-2.0"
+    },
+    {
+      "dependency": "jakarta.el:jakarta.el-api",
+      "license": "EPL-2.0"
+    },
+    {
+      "dependency": "jakarta.interceptor:jakarta.interceptor-api",
+      "license": "EPL-2.0"
+    },
+    {
+      "dependency": "jakarta.json:jakarta.json-api",
+      "license": "EPL-2.0"
+    },
+    {
+      "dependency": "jakarta.resource:jakarta.resource-api",
+      "license": "EPL-2.0"
+    },
+    {
+      "dependency": "jakarta.servlet:jakarta.servlet-api",
+      "license": "EPL-2.0"
+    },
+    {
+      "dependency": "jakarta.transaction:jakarta.transaction-api",
+      "license": "EPL-2.0"
+    },
+    {
+      "dependency": "jakarta.ws.rs:jakarta.ws.rs-api",
+      "license": "EPL-2.0"
+    },
+    {
+      "dependency": "javax.xml.bind:jaxb-api",
+      "license": "GPL-2.0-only"
+    },
+    {
+      "dependency": "org.eclipse.parsson:parsson",
+      "license": "EPL-2.0"
+    },
+    {
+      "dependency": "org.graalvm.sdk:nativeimage",
+      "license": "UPL-1.0"
+    },
+    {
+      "dependency": "org.graalvm.sdk:word",
+      "license": "UPL-1.0"
+    },
+    {
+      "dependency": "org.hibernate.orm:hibernate-core",
+      "license": "LGPL-2.1-only"
+    },
+    {
+      "dependency": "org.hibernate.orm:hibernate-graalvm",
+      "license": "LGPL-2.1-only"
+    },
+    {
+      "dependency": "org.mariadb.jdbc:mariadb-java-client",
+      "license": "LGPL-2.1"
+    },
+    {
+      "dependency": "org.openjdk.nashorn:nashorn-core",
+      "license": "GPL-2.0-only"
+    },
+    {
+      "dependency": "org.reactivestreams:reactive-streams",
+      "license": "MIT-0"
+    }
   ]
 }

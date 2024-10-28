@@ -1,4 +1,4 @@
 #!/bin/bash -e
 
-./create-keycloak-report.sh $i
-gh release -R keycloak/keycloak upload --clobber $i third-party-notice-keycloak.html
+./create-keycloak-report.sh $1
+gh release -R keycloak/keycloak upload --clobber $1 third-party-notice-keycloak.html

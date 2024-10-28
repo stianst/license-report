@@ -50,7 +50,7 @@ public class LicenseReport {
 
     public void createReport() {
         try {
-            ReportBean reportBean = new ReportBean(repositoryManager, licenseContentManager, spdxLicenses);
+            ReportBean reportBean = new ReportBean(repositoryManager, licenseContentManager, spdxLicenses, config.getCncfApproved());
             for (Dependency d : dependencyManager.getDependencies()) {
                 reportBean.add(d);
             }

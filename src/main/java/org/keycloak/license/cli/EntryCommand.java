@@ -6,7 +6,7 @@ import picocli.CommandLine;
 import java.io.File;
 
 @TopCommand
-@CommandLine.Command(mixinStandardHelpOptions = true, subcommands = { ReportCommand.class, CheckDistCommand.class })
+@CommandLine.Command(mixinStandardHelpOptions = true, subcommands = { ReportCommand.class, CheckDistCommand.class, ReleaseDatesCommand.class })
 public class EntryCommand implements Runnable {
 
     @CommandLine.Option(names = {"-p", "--profile"}, description = "Profile", required = true)

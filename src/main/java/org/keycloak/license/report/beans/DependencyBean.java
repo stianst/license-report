@@ -2,6 +2,7 @@ package org.keycloak.license.report.beans;
 
 import io.quarkus.runtime.annotations.RegisterForReflection;
 import org.jboss.logging.Logger;
+import org.keycloak.license.config.CncfApproved;
 import org.keycloak.license.dependencies.Dependency;
 import org.keycloak.license.dependencies.PackageUrlParser;
 import org.keycloak.license.licenses.spdx.License;
@@ -11,6 +12,7 @@ import org.keycloak.license.repository.TagResolver;
 
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Optional;
 
 @RegisterForReflection
 public class DependencyBean {
@@ -21,12 +23,14 @@ public class DependencyBean {
     private final RepositoryInfo repositoryInfo;
     private final DependencyLicenseBean licenseBean;
     private final SpdxLicenses spdxLicenses;
+    private final CncfApproved cncfApproved;
 
-    public DependencyBean(Dependency dependency, RepositoryInfo repositoryInfo, DependencyLicenseBean licenseBean, SpdxLicenses spdxLicenses) {
+    public DependencyBean(Dependency dependency, RepositoryInfo repositoryInfo, DependencyLicenseBean licenseBean, SpdxLicenses spdxLicenses, CncfApproved cncfApproved) {
         this.dependency = dependency;
         this.repositoryInfo = repositoryInfo;
         this.licenseBean = licenseBean;
         this.spdxLicenses = spdxLicenses;
+        this.cncfApproved = cncfApproved;
     }
 
     public String getReference() {
@@ -82,7 +86,18 @@ public class DependencyBean {
     }
 
     public boolean isApprovedByCncf() {
-        return licenseBean.getLicense().isCncfApproved();
+        if (licenseBean.getLicense().isCncfApproved()) {
+            return true;
+        }
+
+        String id = (dependency.getGroup() != null && !dependency.getGroup().isEmpty() ? dependency.getGroup() + ":" : "") + dependency.getName();
+
+        Optional<CncfApproved.Exception> exception = cncfApproved.getExceptions().stream().filter(e -> e.getDependency().equals(id)).findFirst();
+        if (exception.isPresent()) {
+            return licenseBean.getLicense().getLicenseId().equals(exception.get().getLicense());
+        }
+
+        return false;
     }
 
     public List<License> getAllDeclaredLicenses() {

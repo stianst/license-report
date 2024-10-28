@@ -2,6 +2,7 @@ package org.keycloak.license.report.beans;
 
 import io.quarkus.runtime.annotations.RegisterForReflection;
 import org.jboss.logging.Logger;
+import org.keycloak.license.config.CncfApproved;
 import org.keycloak.license.dependencies.Dependency;
 import org.keycloak.license.licenses.LicenseContentManager;
 import org.keycloak.license.licenses.spdx.License;
@@ -32,13 +33,15 @@ public class ReportBean {
     private final RepositoryManager repositoryManager;
     private final LicenseContentManager licenseContentManager;
     private final SpdxLicenses spdxLicenses;
+    private final CncfApproved cncfApproved;
     private List<LicenseBean> licenses = new LinkedList<>();
     private final OffsetDateTime date;
 
-    public ReportBean(RepositoryManager repositoryManager, LicenseContentManager licenseContentManager, SpdxLicenses spdxLicenses) {
+    public ReportBean(RepositoryManager repositoryManager, LicenseContentManager licenseContentManager, SpdxLicenses spdxLicenses, CncfApproved cncfApproved) {
         this.repositoryManager = repositoryManager;
         this.licenseContentManager = licenseContentManager;
         this.spdxLicenses = spdxLicenses;
+        this.cncfApproved = cncfApproved;
         this.date = OffsetDateTime.now(ZoneOffset.UTC);
     }
 
@@ -70,7 +73,7 @@ public class ReportBean {
         });
 
 
-        licenseBean.add(new DependencyBean(dependency, repositoryInfo, new DependencyLicenseBean(repositoryInfo, licenseContentManager, optimalLicense), spdxLicenses));
+        licenseBean.add(new DependencyBean(dependency, repositoryInfo, new DependencyLicenseBean(repositoryInfo, licenseContentManager, optimalLicense), spdxLicenses, cncfApproved));
     }
 
     public String getDate() {
