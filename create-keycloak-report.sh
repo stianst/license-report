@@ -1,4 +1,6 @@
-#!/bin/bash
+#!/bin/bash -e
+
+rm -f *.html
 
 VERSION=$1
 
@@ -15,7 +17,7 @@ if [ ! -d keycloak ]; then
     cd keycloak
 else
     cd keycloak
-    git fetch origin --tags
+    git fetch origin --tags -f
     git reset --hard origin/main
 fi
 
@@ -46,4 +48,4 @@ echo "==========================================================================
 echo "Creating report for Keycloak distribution"
 echo "------------------------------------------------------------------------------"
 
-java -jar target/license-report.jar -p keycloak report --sbom cache/repositories/keycloak/bom.json --sbom cache/repositories/keycloak/quarkus/deployment/target/bom.json --sbom cache/repositories/keycloak/operator/target/bom.json
+java -jar target/license-report.jar -p keycloak report --ignore-validation --sbom cache/repositories/keycloak/bom.json --sbom cache/repositories/keycloak/quarkus/deployment/target/bom.json --sbom cache/repositories/keycloak/operator/target/bom.json

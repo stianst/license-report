@@ -10,7 +10,7 @@ public class LicenseResolver {
 
     private static final List<Set<String>> expectedFiles = List.of(
             Set.of("license", "license.txt"),
-            Set.of("license.md", "license.html", "license.htm"),
+            Set.of("license.md", "license.html", "license.htm", "license.markdown"),
             Set.of("copying")
     );
 

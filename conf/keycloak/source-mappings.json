@@ -24,6 +24,22 @@
     "sourceUrl": "https://github.com/eclipse-vertx/vertx-codegen"
   },
   {
+    "dependency": "io.vertx:vertx-grpc",
+    "sourceUrl": "https://github.com/eclipse-vertx/vertx-grpc"
+  },
+  {
+    "dependency": "io.vertx:vertx-grpc-server",
+    "sourceUrl": "https://github.com/eclipse-vertx/vertx-grpc"
+  },
+  {
+    "dependency": "io.vertx:vertx-grpc-client",
+    "sourceUrl": "https://github.com/eclipse-vertx/vertx-grpc"
+  },
+  {
+    "dependency": "io.vertx:vertx-grpc-common",
+    "sourceUrl": "https://github.com/eclipse-vertx/vertx-grpc"
+  },
+  {
     "dependency": "net.bytebuddy:byte-buddy",
     "sourceUrl": "https://github.com/raphw/byte-buddy"
   },
@@ -86,5 +102,9 @@
   {
     "dependency": ":prop-types",
     "sourceUrl": "https://github.com/facebook/prop-types"
+  },
+  {
+    "dependency": "@uiw:react-textarea-code-editor",
+    "sourceUrl": "https://github.com/uiwjs/react-textarea-code-editor"
   }
 ]

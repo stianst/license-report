@@ -31,7 +31,9 @@ public class DependencyLicenseBean {
         this.repositoryInfo = repositoryInfo;
         this.licenseContentManager = licenseContentManager;
         this.license = license;
-        this.licenseContents = licenseContentManager.getLicenseContent(repositoryInfo.getLicenseUrl());
+        if (repositoryInfo != null && repositoryInfo.getLicenseUrl() != null) {
+            this.licenseContents = licenseContentManager.getLicenseContent(repositoryInfo.getLicenseUrl());
+        }
     }
 
     public String getName() {
@@ -61,7 +63,7 @@ public class DependencyLicenseBean {
             return licenseContents;
         }
 
-        if (repositoryInfo.getLicenseUrl().endsWith(".md")) {
+        if (repositoryInfo.getLicenseUrl() != null && repositoryInfo.getLicenseUrl().endsWith(".md")) {
             Parser parser = Parser.builder().build();
             Node document = parser.parse(licenseContents);
             HtmlRenderer renderer = HtmlRenderer.builder().build();

@@ -88,7 +88,8 @@
     "licenseId": "MIT",
     "dependencyMappings": [
       ":font-awesome",
-      ":type-fest"
+      ":type-fest",
+      ":jszip"
     ],
     "nameMappings": [
       "The MIT License",
