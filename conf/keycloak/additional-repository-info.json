@@ -1,7 +1,7 @@
 [
   {
     "sourceUrl": "https://github.com/hibernate/hibernate-orm/",
-    "licenseUrl": "https://raw.githubusercontent.com/hibernate/hibernate-orm/main/lgpl.txt"
+    "licenseUrl": "https://raw.githubusercontent.com/hibernate/hibernate-orm/refs/heads/6.2/lgpl.txt"
   },
   {
     "sourceUrl": "https://github.com/locationtech/jts/",

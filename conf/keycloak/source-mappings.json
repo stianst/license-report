@@ -17,7 +17,7 @@
   },
   {
     "dependency": "io.vertx:vertx-bridge-common",
-    "sourceUrl": "https://github.com/vert-x3/vertx-bridge-common"
+    "sourceUrl": "https://github.com/vert-x3/vertx-bridge-common/tree/4.x"
   },
   {
     "dependency": "io.vertx:vertx-codegen",
