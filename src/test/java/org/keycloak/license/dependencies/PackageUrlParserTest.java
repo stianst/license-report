@@ -20,7 +20,26 @@ public class PackageUrlParserTest {
     @Test
     public void testNpmWithGroup() {
         String url = PackageUrlParser.toUrl("pkg:npm/%40typescript-eslint/parser@7.12.0");
-        Assertions.assertEquals("https://www.npmjs.com/package/%40typescript-eslint/parser", url);
+        Assertions.assertEquals("https://www.npmjs.com/package/@typescript-eslint/parser", url);
     }
 
+    @Test
+    public void testEmpty() {
+        String url = PackageUrlParser.toUrl("");
+        Assertions.assertNull(url);
+    }
+
+    @Test
+    public void testNpmWithGroupAndParams() {
+        String url = PackageUrlParser.toUrl("pkg:npm/%40keycloak%2Fkeycloak-admin-ui?vcs_url=file%3Aapps/admin-ui");
+        Assertions.assertEquals("https://www.npmjs.com/package/@keycloak/keycloak-admin-ui", url);
+    }
+
+    @Test
+    public void testNpmWithGroupAndVersionAndParams() {
+        String url = PackageUrlParser.toUrl("pkg:npm/%40keycloak%2Fkeycloak-admin-ui@26.5.0?vcs_url=file%3Aapps/admin-ui");
+        Assertions.assertEquals("https://www.npmjs.com/package/@keycloak/keycloak-admin-ui", url);
+        url = PackageUrlParser.toUrl("pkg:npm/%40keycloak%2Fkeycloak-admin-ui%4026.5.0?vcs_url=file%3Aapps/admin-ui");
+        Assertions.assertEquals("https://www.npmjs.com/package/@keycloak/keycloak-admin-ui", url);
+    }
 }
