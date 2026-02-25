@@ -65,6 +65,10 @@
       "license": "EPL-2.0"
     },
     {
+      "dependency": "org.glassfish.expressly:expressly",
+      "license": "EPL-2.0"
+    },
+    {
       "dependency": "org.graalvm.sdk:nativeimage",
       "license": "UPL-1.0"
     },
